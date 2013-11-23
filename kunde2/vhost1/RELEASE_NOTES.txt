@@ -1,0 +1,64 @@
+RELEASE NOTES FOR TYPO3 3.7.1
+*******************************
+
+This document contains important information for upgrades to TYPO3 3.7.x.
+If you are upgrading from TYPO3 3.7.0 to 3.7.1 then you can simply ignore
+this document.
+
+
+This document was taken from
+http://wiki.typo3.org/index.php/TYPO3_3.7.0_Upgrade
+
+It contains last minute information about what kind of problem you can
+see during an upgrade from TYPO3 version 3.6.x to 3.7.0.
+
+In TYPO3 3.7.0 there are some changes within the extension structure.
+Some extensions which were considered as normal extensions are now system
+extensions. That means they are now part of the TYPO3 source distribution.
+
+After an upgrade you may encounter the following problem. Some of the
+new system extensions could still be found in typo3/ext/ or probably
+typo3conf/ext/. Depending on how you upgraded your TYPO3 installation,
+some new system extensions might be overridden by their old predecessor.
+
+Example:
+If you've just copied the latest release over an old installation, then
+the directory "install" located in the global TYPO3 extension folder,
+typo3/ext/, will conflict with the new "install" which is now a system
+extension.
+
+Solution:
+You must remove the old extension from the ext/ folders to avoid conflict.
+
+The extensions in conflict may be located in these places:
+  local extensions      =   typo3conf/ext/
+  global extensions     =   typo3/ext/
+
+- Remove directories in global ext/ folder and local ext/ folder if they
+  are now in sysext/
+- Extra: make sure that typo3/ext/extrep_wizard is deleted (this has
+  been replaced with the "kickstarter" extension)
+- Finally, clear all temp_CACHED_* files (either with the link in the
+  BE or manually)
+
+Here is the list of extensions to remove:
+  aboutmodules
+  context_help
+  extra_page_cm_options
+  func_wizards
+  info_pagetsconfig
+  install
+  setup
+  tsconfig_help
+  wizard_crpages
+  wizard_sortpages
+  extrep_wizard (replaced with "kickstarter")
+
+After removing these extensions you can continue with upgrading your
+TYPO3 installation as it is explained in the "Installation and Upgrade"
+manual: http://typo3.org/documentation/document-library/doc_inst_upgr/
+
+As usual, you should check the mailing list archives if you have further
+questions: http://typo3.org/documentation/mailing-lists/
+
+-- Sylvain Viart <sylvain@ledragon.net>  Fri, 24 Sep 2004 02:08:53 +0200

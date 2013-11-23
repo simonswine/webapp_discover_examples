@@ -1,0 +1,50 @@
+plugin.tt_board {
+    # cat=plugin.board; type=string; label= Moderator email: This email address will get a mail every time somebody submits a message to the forum.
+  moderatorEmail  = 
+
+  numberOfRecentPosts = 0
+}
+
+
+plugin.tt_board_list{
+    # cat=plugin.board/file; type=file[html,htm,tmpl,txt]; label= Template File, list style: This is a simple textfile where the board is defined with HTML-code. To see an example with explanations, take a look at EXT:tt_board/pi/board_template.tmpl which is the default.
+  file.templateFile = EXT:tt_board/pi/board_template1.tmpl
+
+    # cat=plugin.board/typo; type=wrap; label= List-style, Wrap 1: This wrap is used in the template-file.
+  wrap1 = <font face="verdana" size=2 color=black> | </font>
+    # cat=plugin.board/typo; type=wrap; label= List-style, Wrap 2: This wrap is used in the template-file.
+  wrap2 = <font face="verdana" size=1 color=black> | </font>
+    # cat=plugin.board/typo; type=wrap; label= List-style, Wrap 3: This wrap is used in the template-file.
+  wrap3 = <font face="verdana" size=2 color=white> | </font>
+
+    # cat=plugin.board/color; type=color; label= List-style, Color 1: This bgcolor is used in the template-file.
+  color1 = #cccccc
+    # cat=plugin.board/color; type=color; label= List-style, Color 2: This bgcolor is used in the template-file.
+  color2 = #999999
+    # cat=plugin.board/color; type=color; label= List-style, Color 3: This bgcolor is used in the template-file.
+  color3 = #333333
+    # cat=plugin.board/color; type=color; label= List-style, Color 4: This bgcolor is used in the template-file.
+  color4 = #333366
+}
+
+
+plugin.tt_board_tree{
+    # cat=plugin.board/file; type=file[html,htm,tmpl,txt]; label= Template File, tree style: This is a simple textfile where the board is defined with HTML-code. To see an example with explanations, take a look at EXT:tt_board/pi/board_template.tmpl which is the default.
+  file.templateFile = EXT:tt_board/pi/board_template2.tmpl
+
+    # cat=plugin.board/typo; type=wrap; label= Tree-style, Wrap 1: This wrap is used in the template-file.
+  wrap1 = <font face="verdana" size=2 color=black> | </font>
+    # cat=plugin.board/typo; type=wrap; label= Tree-style, Wrap 2: This wrap is used in the template-file.
+  wrap2 = <font face="verdana" size=1 color=black> | </font>
+    # cat=plugin.board/typo; type=wrap; label= Tree-style, Wrap 3: This wrap is used in the template-file.
+  wrap3 = <font face="verdana" size=2 color=white> | </font>
+
+    # cat=plugin.board/color; type=color; label= Tree-style, Color 1: This bgcolor is used in the template-file.
+  color1 = #cccccc
+    # cat=plugin.board/color; type=color; label= Tree-style, Color 2: This bgcolor is used in the template-file.
+  color2 = #999999
+    # cat=plugin.board/color; type=color; label= Tree-style, Color 3: This bgcolor is used in the template-file.
+  color3 = #333333
+    # cat=plugin.board/color; type=color; label= Tree-style, Color 4: This bgcolor is used in the template-file.
+  color4 = #333366
+}

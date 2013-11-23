@@ -1,0 +1,135 @@
+#TypoScript Example:
+
+# Includes the ratingLib and make a simple setup. Mandatory!
+includeLibs.ts_rating = media/scripts/ratingLib.inc
+
+FEData.tt_rating {
+  processScript = media/scripts/rating_submit.inc
+  allowEdit {
+    rating = 1
+    // following are used to pass configuration to fe_tce.php, They are NOT fields
+	// this may change later
+    minRating = 1
+    maxRating = 1
+    ratingStatSteps = 1
+  }
+}
+
+// output with graphics (layout default)
+content.tt_rating = PHP_SCRIPT
+content.tt_rating {
+	file = media/scripts/rating.inc
+	allowNew = 1
+	defaultCode = RESULT,VOTEFORM
+	  //used if you allowNew
+	defaultTitle = rating
+	defaultDescription =
+	  // the best and the worst rating value
+	highestRating = 5
+	lowestRating = 1
+	  // normally the same as in your voteform
+	ratingStatSteps = 5
+	  // the length of a bar or similiar
+	ratingOutputWidth = 110
+
+	wrap =
+
+	voteform < styles.content.mailform
+	voteform.layout = <td>###FIELD###</td><td><img src="clear.gif" width={$styles.content.mailform.border}></td>
+	voteform.stdWrap.wrap = <table border=0 cellspacing=0 cellpadding=0><tr>  | </tr></table>
+	voteform.data >
+	voteform.data = | *data[tt_rating][EDIT][rating]=select |0 - No rating=0, 5 - Excellent=5, 4 - Good=4, 3 - Fair=3, 2 - Needs improvement=2, 1 - Unsatisfactory=1 ||  | formtype_db = submit | Rate this
+	voteform.no_cache=1
+	voteform.noValueInsert=1
+	voteform.wrap =
+
+	noRatingObj = COA
+	noRatingObj {
+		10 = TEXT
+		10.value = This object is not rated yet.
+		10.wrap = {$content.wrap.bodytext}
+		10.brTag = <br>
+		10.textStyle < styles.content.textStyle
+	}
+
+	renderObj = COA
+	renderObj.stdWrap.wrap =  | <br>
+	renderObj {
+
+		10 = IMAGE
+		10.file = GIFBUILDER
+		10.file {
+			backColor = {$cSet.pageColor}
+			transparentBackground = 1
+			XY = [10.w]*5,[10.h]
+			10 = IMAGE
+			10 {
+				file = media/scripts/star_grey.gif
+				mask = media/scripts/star_mask.gif
+				// this makes five stars - the maximum rating
+				tile = 5,1
+			}
+			15 = WORKAREA
+			15.set = 0,0,###RATINGMUL###*[10.w]*5,[10.h]
+			20 = IMAGE
+			20 {
+				file = media/scripts/star.gif
+				mask = media/scripts/star_mask.gif
+				// this makes five stars - the maximum rating
+				tile = 5,1
+			}
+		}
+		20 = TEXT
+		20 {
+			cObject = TEXT
+			cObject.dataWrap = &nbsp;&nbsp;<b>{field:rating}</b> ({field:votes} votes)
+			wrap =
+			#wrap = {$content.wrap.bodytext}
+			brTag = <br>
+			textStyle < styles.content.textStyle
+		}
+
+	}
+  }
+
+// an output variant with a HTML-bar (layout 1)
+temp.tt_rating.1.renderObj = COA
+temp.tt_rating.1.renderObj {
+	10 = HTML
+	10.value = <table width=###RATINGFULLWIDTH### cellspacing=0 cellpadding=0 border=0>
+	20 = HTML
+	20.value = <tr><td width=###RATINGWIDTH### bgcolor=#eec02d><img src="clear.gif" width=###RATINGWIDTH### height=12></td><td width=###RATINGREMAINWIDTH### bgcolor=#cccccc><img src="clear.gif" width=###RATINGREMAINWIDTH### height=12></td></tr>
+	30 = TEXT
+	30 {
+		cObject = TEXT
+		cObject.dataWrap = <b>{field:rating}</b> ({field:votes} votes)
+		wrap = <tr><td colspan=2 align=right nowrap> | </td></tr>
+		#wrap = {$content.wrap.bodytext}
+		brTag = <br>
+		textStyle < styles.content.textStyle
+	}
+	40 = HTML
+	40.value = </table>
+}
+
+
+
+tt_rating < content.tt_rating
+tt_rating.displayCurrentRecord = 1
+
+
+tt_content.shortcut = COA
+tt_content.shortcut {
+  20.0.tables = tt_rating,tt_content,tt_address,tt_links,tt_guest,tt_board,tt_calender,tt_products
+  20.0.conf.tt_rating < content.tt_rating
+}
+
+tt_content.list.20.8 = CASE
+tt_content.list.20.8.key.field = layout
+tt_content.list.20.8.0 < content.tt_rating
+tt_content.list.20.8.0 {
+  pid_list.field = pages
+  code.field = select_key
+}
+tt_content.list.20.8.1 < tt_content.list.20.8.0
+tt_content.list.20.8.1.renderObj < temp.tt_rating.1.renderObj

@@ -1,0 +1,107 @@
+
+
+# Includes the ratingLib and make a simple setup. Mandatory!
+includeLibs.ts_rating = media/scripts/ratingLib.inc
+
+FEData.tt_rating {
+  processScript = media/scripts/rating_submit.inc
+    allowEdit {
+    rating = 1
+    // following are used to pass configuration to fe_tce.php, They are NOT fields
+    minRating = 1
+    maxRating = 1
+    ratingStatSteps = 1
+  }
+}
+
+
+content.tt_rating = PHP_SCRIPT
+content.tt_rating {
+    file = media/scripts/rating.inc
+    allowNew = 1
+    defaultCode = RESULT,VOTEFORM
+    defaultTitle = Bewertung
+    defaultDescription =
+    highestRating = 5
+    lowestRating = 1
+    ratingStatSteps = 9
+    ratingOutputWidth = 110
+
+    wrap = <table border=0 cellspacing=0 cellpadding=0><tr>  | </tr></table>
+
+    voteform < styles.content.mailform
+    voteform.layout = <td>###FIELD###</td><td><img src="clear.gif" width={$styles.content.mailform.border}></td>
+    voteform.stdWrap.wrap = <table border=0 cellspacing=0 cellpadding=0><tr>|</tr></table>
+    voteform.data >
+    voteform.data = | *data[tt_rating][EDIT][rating]=select |-Deine Bewertung-=0, 5.0 - excellent=5, 4.5=4.5, 4.0 - gut=4, 3.5=3.5, 3.0 - mittel=3, 2.5=2.5, 2.0 - einigermaﬂen=2, 1.5=1.5, 1.0 - m‰ﬂig=1 ||  | formtype_db = submit | Bewerten
+    voteform.no_cache=1
+    voteform.noValueInsert=1
+    voteform.stdWrap.wrap = <td><img src="clear.gif" border=0 height=1 width=35></td><td valign=top>|</td>
+
+    noRatingObj = COA
+    noRatingObj.stdWrap.wrap = <td nowrap valign=top>  | </td>
+    noRatingObj {
+        10 = TEXT
+        10.value = Ist noch nicht bewertet worden.
+        10.wrap =
+        #{$content.wrap.bodytext}
+        10.brTag = <br>
+        10.textStyle < styles.content.textStyle
+    }
+
+    renderObj = COA
+    renderObj.stdWrap.wrap = <td nowrap valign=top>  | </td>
+    renderObj {
+
+        10 = IMAGE
+        10.file = GIFBUILDER
+        10.file {
+            backColor = {$bgCol}
+            transparentBackground = 1
+            XY = [10.w],[10.h]
+            10 = IMAGE
+            10 {
+                file = fileadmin/layout/ratingBar-grau.gif
+                mask = fileadmin/layout/ratingBar-mask.gif
+            }
+            15 = WORKAREA
+            15.set = 0,0,###RATINGMUL###*[10.w],[10.h]
+            20 = IMAGE
+            20 {
+                file = fileadmin/layout/ratingBar-gelb.gif
+                mask = fileadmin/layout/ratingBar-mask.gif
+            }
+        }
+        20 = TEXT
+        20 {
+            cObject = TEXT
+            cObject.dataWrap = &nbsp;&nbsp;<b>{field:rating}</b> ({field:votes} Stimmen)
+            wrap =
+            #wrap = {$content.wrap.bodytext}
+            brTag = <br>
+            textStyle < styles.content.textStyle
+        }
+
+    }
+  }
+
+## This enables the record item to display rating items
+
+tt_rating < content.tt_rating
+tt_rating.displayCurrentRecord = 1
+
+
+tt_content.shortcut = COA
+tt_content.shortcut {
+  20.0.tables = tt_rating,tt_content,tt_address,tt_links,tt_guest,tt_board,tt_calender,tt_products
+  20.0.conf.tt_rating < content.tt_rating
+}
+
+tt_content.list.20.8 = CASE
+tt_content.list.20.8.key.field = layout
+tt_content.list.20.8.0 < content.tt_rating
+tt_content.list.20.8.0 {
+  pid_list.field = pages
+  code.field = select_key
+}
+

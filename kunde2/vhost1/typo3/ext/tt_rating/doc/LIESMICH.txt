@@ -1,0 +1,39 @@
+#
+# HINWEIS
+# Diese Version von tt_rating setzt eine Typo3 3.2 Version vorraus
+
+Installation:
+
+scripts/* nach media/scripts/ kopieren
+tt_rating.gif nach typo3/gfx/i/ kopieren
+ext-tables-rating.inc nach typo3conf/ kopieren
+
+ext-tables-rating.inc in localconf.php einbinden:
+$typo_db_extTableDef_script = "ext-tables-rating.inc";
+
+Falls schon eine andere Datei eingebunden wird, kann ext-tables-rating.inc auch
+in der Datei eingebunden werden:
+require ($GLOBALS["DOCUMENT_ROOT"]."/typo3conf/"."ext-tables-rating.inc");
+
+Mit tt_rating.sql die Datenbanktabelle anlegen:
+mysql --user=XXX --password=XXX DATABASE < tt_rating.sql
+(XXX und DATABASE entsprechend ersetzen)
+
+
+Es gibt zwei Möglichkeiten ein Rating Objekt auf einer Seite darzustellen.
+
+1. tt_rating record anlegen und mit einem 'Datensatz einfügen' Objekt als content einfügen.
+
+2. Ein Objekt 'Datensatz Liste' anlegen und Bewertung auswählen. Ein tt_rating record muss hier nicht angelegt werden.
+
+!! Meine Bedürfnisse waren EIN rating Objekt pro Seite zu haben. Ich habe nie ausprobiert was bei mehreren Objekten passiert. !!
+
+Standard TS-Code:
+ts-setup.txt
+
+Typoscript Beispiele (alt und ungetestet):
+
+ts-example.txt - TS-code mit 2 Beispielen (benutze Datensatz Liste mit Layout Normal und Layout 1)
+
+ts-filmaholic.txt - TS-code wird auf filmaholic benutzt (mit dieser Version ungetestet)
+

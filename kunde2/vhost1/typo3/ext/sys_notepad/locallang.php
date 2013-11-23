@@ -1,0 +1,109 @@
+<?php
+
+$LOCAL_LANG = Array (
+	'default' => Array (
+		'note_helpText' => 'The Quick Note is your personal notepad in TYPO3. Nobody else sees it and it\'s intended to be a place for you to drop short reminder notes which relates to your work in TYPO3.',
+		'mod_note' => 'Quick Note',
+	),
+	'dk' => Array (
+		'note_helpText' => 'Kvik-noten er din personlige notesblok i TYPO3. Ingen andre kan se den, og den er beregnet til at være et sted, hvor du kan indsætte mindre notater i relation til dit arbejde i TYPO3.',
+		'mod_note' => 'Kvik-note',
+	),
+	'de' => Array (
+		'note_helpText' => 'Dies ist Ihr persönliches Notizbuch in TYPO3. Niemand anderes hat Einblick in dieses. Hier sollten Sie sich kurze Erinnerungen und Notizen, bezogen auf Ihre Arbeit mit TYPO3, eintragen.',
+		'mod_note' => 'Notizen',
+	),
+	'no' => Array (
+		'note_helpText' => 'Hurtig-notat er din personlige notatblokk i TYPO3. Ingen andre kan se den, og den er ment å være et sted hvor du kan notere påminnelser i forbindelse med arbeidet ditt i TYPO3.',
+		'mod_note' => 'Hurtig-notat',
+	),
+	'it' => Array (
+		'note_helpText' => 'Quick Note è il vostro blocco per appunti. Nessun altro lo vede e potete usarlo per lasciare brevi note riguardo i vostri lavori in Typo3.',
+		'mod_note' => 'Quick Note',
+	),
+	'fr' => Array (
+		'note_helpText' => 'Les Note rapides sont votre bloc-note personnel dans TYPO3. Personne d\'autre ne peut les consulter. Vous pouvez les utiliser pour des petits rapport de travail, ...',
+		'mod_note' => 'Note rapide',
+	),
+	'es' => Array (
+		'note_helpText' => 'Las Notas Rápidas son su libreta personal en TYPO3. Nadie mas ve su contenido y están pensadas para que escriba recordatorios cortos sobre su trabajo en TYPO3.',
+		'mod_note' => 'Nota rápida',
+	),
+	'nl' => Array (
+		'note_helpText' => 'Het NotitieBlok is je eigen kladblok in TYPO3. Niemand anders kan het zien en het is bedoeld als een plek waar je notities kan achter laten die betrekking hebben op jouw werk in TYPO3.',
+		'mod_note' => 'NotitieBlok',
+	),
+	'cz' => Array (
+		'note_helpText' => 'Rychlá poznámka je váš osobní poznámkový blok v TYPO3. Nikdo jiný ji nevidí a je mínìna jako místo pro vaše krátké poznámky vztahující se k práci v TYPO3.',
+		'mod_note' => 'Rychlá poznámka',
+	),
+	'pl' => Array (
+		'note_helpText' => 'W notatniku mo¿esz sporz±dzaæ notatki, przydatne w codziennej pracy w systemie TYPO3.',
+		'mod_note' => 'Notatnik',
+	),
+	'si' => Array (
+		'note_helpText' => 'To je vaša osebna beležka v TYPO3. Vanjo si lahko zapišete razliène opombe.',
+		'mod_note' => 'Beležka',
+	),
+	'fi' => Array (
+		'note_helpText' => 'Pikamuistio on henkilökohtainen muistiosi TYPO3ssa. Muut eivät näe sitä ja se tarkoitus on olla sijoitettuna siten että voit helposti sijoitella sinne tarpeellisia mustutuksia jotka liittyvät työhösi TYPO3ssa. ',
+		'mod_note' => 'Pikamuistio',
+	),
+	'tr' => Array (
+		'note_helpText' => 'TYPO3 içindeki kiþisel notepad iniz Hýzlý notunuzdur. Hiçkimse Tarafýndan görülemez ve TYPO3 çalýþmanýzla ilgili küçük notlar býrakmanýzý saðlayan bir yer olma amacýndadýr.',
+		'mod_note' => 'Hýzlý Not',
+	),
+	'se' => Array (
+		'note_helpText' => 'Snabbanteckning är din personliga anteckningsbok i Typo3. Ingen annan kan se den och det är meningen, att du ska skriva korta meddelanden och påminnelser om ditt arbete i Typo3.',
+		'mod_note' => 'Snabbanteckning',
+	),
+	'pt' => Array (
+		'note_helpText' => 'As Notas Rápidas são o seu notepad pessoal no TYPO3. Ninguém mais vê o seu conteúdo e foi pensado para ser o sítio onde pode colocar pequenos lembretes relacionadas com o seu trabalho no TYPO3.',
+		'mod_note' => 'Nota Rápida',
+	),
+	'ru' => Array (
+		'note_helpText' => 'Âàø ëè÷íûé áëîêíîò â TYPO3, êîòîðûé íå âèäåí íè äëÿ êîãî äðóãîãî, è ïðåäíàçíà÷åí äëÿ âàøèõ êîðîòêèõ çàïèñåé, ñâÿçàííûõ ñ âàøåé ðàáîòîé â TYPO3.',
+		'mod_note' => 'Çàìåòêè',
+	),
+	'ro' => Array (
+	),
+	'ch' => Array (
+	),
+	'sk' => Array (
+		'note_helpText' => 'Rýchla poznámka je váš osobný poznámkový blok v TYPO3. Nikto iný ho neuvidí a je vytvorený pre vaše krátke poznámky vzahujúce s k práci v TYPO3.',
+		'mod_note' => 'Rýchla poznámka',
+	),
+	'lt' => Array (
+	),
+	'is' => Array (
+	),
+	'hr' => Array (
+		'note_helpText' => 'Quick Note je vaš osobni notes u Typo3 sustavu. To je mjesto za vaše kratke podsjetnike vezane uz rad u Typo3 sustavu, i dostupan je samo vama.',
+		'mod_note' => 'Quick Note',
+	),
+	'hu' => Array (
+	),
+	'gl' => Array (
+	),
+	'th' => Array (
+	),
+	'gr' => Array (
+	),
+	'hk' => Array (
+	),
+	'eu' => Array (
+	),
+	'bg' => Array (
+	),
+	'br' => Array (
+	),
+	'et' => Array (
+	),
+	'ar' => Array (
+	),
+	'he' => Array (
+	),
+	'ua' => Array (
+	),
+);
+?>

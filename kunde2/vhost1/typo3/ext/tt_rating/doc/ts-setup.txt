@@ -1,0 +1,146 @@
+plugin.tt_rating >
+plugin.tt_rating {
+
+    # cat=plugin.rating/typo; type=; label= Vote form select data.
+  formSelectData = 0 - No rating=0, 5 - Excellent=5, 4 - Good=4, 3 - Fair=3, 2 - Needs improvement=2, 1 - Unsatisfactory=1
+    # cat=plugin.rating/typo; type=; label= Text to show if not rated yet.
+  notRated = This object is not rated yet.
+    # cat=plugin.rating/typo; type=; label= Text to show nearby your rating bar.
+  textOutput = &nbsp;&nbsp;<b>###RATING###</b> (###VOTES### votes)
+
+    # cat=plugin.rating/typo; type=int; label= The highest possible rating as number. (examples: 5 [best] - 1 [worst], 1 [best] - 6 [worst])
+  highestRating = 5
+    # cat=plugin.rating/typo; type=int; label= The lowest possible rating.
+  lowestRating = 1
+    # cat=plugin.rating/typo; type=int; label= For statistics logging. This should match the steps in the form.
+  ratingStatSteps = 5
+    # cat=plugin.rating/typo; type=int; label= The length of a bar or similiar.
+  ratingOutputWidth = 110
+
+    # cat=plugin.rating/typo; type=; label= Image used to render the 'good' bar.
+  goodImgFile = media/scripts/star.gif
+    # cat=plugin.rating/typo; type=; label= Image used to render the 'bad' bar.
+  badImgFile = media/scripts/star_grey.gif
+    # cat=plugin.rating/typo; type=; label= Image used to mask both images against the background color.
+  maskImgFile = media/scripts/star_mask.gif
+    # cat=plugin.rating/typo; type=int[1-20]; label= Should the image be tiled (example: 5 stars). If not set it to 1.
+  tileImg = 5
+}
+
+
+------setup--------
+
+## Includes the ratingLib:
+includeLibs.ts_rating = media/scripts/ratingLib.inc
+
+## Sets up the fields, that may be submitted in order to create items. Mandatory!
+FEData.tt_rating {
+  processScript = media/scripts/rating_submit.inc
+  allowEdit {
+    rating = 1
+    // following items are used to pass configuration to fe_tce.php, They are NOT fields
+    // this may change later
+    minRating = 1
+    maxRating = 1
+    ratingStatSteps = 1
+  }
+}
+
+
+
+plugin.tt_rating >
+plugin.tt_rating = USER
+plugin.tt_rating {
+  userFunc = tx_ttrating->main_rating
+
+  pid_list.field = pages
+  code.field = select_key
+
+  allowNew = 1
+  defaultCode = RESULT,VOTEFORM
+    //used if you allowNew
+  defaultTitle =
+  defaultDescription =
+    // the best and the worst rating value
+  highestRating = {$plugin.tt_rating.highestRating}
+  lowestRating = {$plugin.tt_rating.lowestRating}
+    // normally the same as in your voteform
+  ratingStatSteps = {$plugin.tt_rating.ratingStatSteps}
+    // the length of a bar or similiar
+  ratingOutputWidth = {$plugin.tt_rating.ratingOutputWidth}
+
+  wrap =
+
+  voteform < styles.content.mailform
+  voteform.layout = <td>###FIELD###</td><td><img src="clear.gif" width={$styles.content.mailform.border}></td>
+  voteform.stdWrap.wrap = <table border=0 cellspacing=0 cellpadding=0><tr>  | </tr></table>
+  voteform.data >
+  voteform.dataArray {
+    10.label =
+    10.type = *data[tt_rating][EDIT][rating]=select
+    10.value = {$plugin.tt_rating.formSelectData}
+    20.type = formtype_db = submit
+    20.value = Rate this
+  }
+  voteform.no_cache=1
+  voteform.noValueInsert=1
+  voteform.wrap =
+
+  noRatingObj = TEXT
+  noRatingObj.value = {$plugin.tt_rating.notRated}
+  noRatingObj.textStyle < styles.content.textStyle
+
+
+  renderObj = COA
+  renderObj.stdWrap.wrap =  | <br>
+  renderObj {
+
+    10 = IMAGE
+    10.file = GIFBUILDER
+    10.file {
+      backColor = {$cSet.pageColor}
+      transparentBackground = 1
+      XY = [10.w]*{$plugin.tt_rating.tileImg},[10.h]
+      10 = IMAGE
+      10 {
+        file = {$plugin.tt_rating.badImgFile}
+        mask = {$plugin.tt_rating.maskImgFile}
+        tile = {$plugin.tt_rating.tileImg},1
+      }
+      15 = WORKAREA
+      15.set = 0,0,###RATINGMUL###*[10.w]*{$plugin.tt_rating.tileImg},[10.h]
+      20 = IMAGE
+      20 {
+        file = {$plugin.tt_rating.goodImgFile}
+        mask = {$plugin.tt_rating.maskImgFile}
+        tile = {$plugin.tt_rating.tileImg},1
+      }
+    }
+    20 = TEXT
+    20.value = {$plugin.tt_rating.textOutput}
+    20.textStyle < styles.content.textStyle
+    }
+
+  }
+}
+
+
+
+## This enables the tt_content.record item to display rating items:
+tt_rating >
+tt_rating = < plugin.tt_rating
+tt_rating.displayCurrentRecord = 1
+
+
+tt_content.list.20 {
+  # LIST element references (NOT copy of objects!)
+  8 = CASE
+  8.key.field = layout
+  8.0 = < plugin.tt_rating
+}
+
+tt_content.shortcut = COA
+tt_content.shortcut {
+  20.0.tables = {$content.shortcut.tables},tt_rating
+  20.0.conf.tt_rating < tt_rating
+}

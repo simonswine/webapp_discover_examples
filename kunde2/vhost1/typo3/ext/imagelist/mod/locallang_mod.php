@@ -1,0 +1,142 @@
+<?php
+
+$LOCAL_LANG = Array (
+	'default' => Array (
+		'mlang_labels_tablabel' => 'Listing of images in the directory',
+		'mlang_labels_tabdescr' => 'Lists the images in large dimensions, five at a time. The pixeldimensions of the images are displayed as well.',
+		'mlang_tabs_tab' => 'Images',
+	),
+	'dk' => Array (
+		'mlang_labels_tablabel' => 'Listning af billeder i kataloget',
+		'mlang_labels_tabdescr' => 'Viser billeder i stort format, fem ad gangen. Pixeldimensionerne på billederne bliver også vist.',
+		'mlang_tabs_tab' => 'Billeder',
+	),
+	'de' => Array (
+		'mlang_labels_tablabel' => 'Anzeige der Bilder im Ordner',
+		'mlang_labels_tabdescr' => 'Zeigt die Bilder im großen Format an. Die Anzeige ist auf je 5 Bilder begrenzt. Die Pixelgröße der Bilder wird ebenfalls angezeigt.',
+		'mlang_tabs_tab' => 'Bilder',
+	),
+	'no' => Array (
+		'mlang_labels_tablabel' => 'Listing av bilder i katalogen',
+		'mlang_labels_tabdescr' => 'Viser bilder i stort format, fem om gangen. Pixeldimensjonene på bildene vises også.',
+		'mlang_tabs_tab' => 'Bilder',
+	),
+	'it' => Array (
+		'mlang_labels_tablabel' => 'Elenco delle immagini nella cartella',
+		'mlang_labels_tabdescr' => 'Elenca le immagini in dimensione allargata, cinque per volta. Vengono indicate anche le dimensioni effettive delle immagini.',
+		'mlang_tabs_tab' => 'Immagini',
+	),
+	'fr' => Array (
+		'mlang_labels_tablabel' => 'Liste des images du répertoire',
+		'mlang_labels_tabdescr' => 'Lister les images en haute résolution par groupe de cinq. Les dimensions de l\'images sont aussi affichée.',
+		'mlang_tabs_tab' => 'Images',
+	),
+	'es' => Array (
+		'mlang_labels_tablabel' => 'Relación de imágenes en el directorio',
+		'mlang_labels_tabdescr' => 'Muestra las imágenes, cinco a la vez. También indica el tamaño en pixeles',
+		'mlang_tabs_tab' => 'Imágenes',
+	),
+	'nl' => Array (
+		'mlang_labels_tablabel' => 'Lijst van afbeeldingen in de map',
+		'mlang_labels_tabdescr' => 'Toont een lijst van de afbeeldingen in de maximale grootte, vijf per keer. De pixelmaten van de afbeeldingen worden ook getoond.',
+		'mlang_tabs_tab' => 'Afbeeldingen',
+	),
+	'cz' => Array (
+		'mlang_labels_tablabel' => 'Seznam obrázkù ve složce',
+		'mlang_labels_tabdescr' => 'Seznam obrázkl ve vìtším rozmìru, pìt najednou. Rozmìry obrázku v bodech jsou zobrazeny také.',
+		'mlang_tabs_tab' => 'Obrázky',
+	),
+	'pl' => Array (
+		'mlang_labels_tablabel' => 'Lista plików graficznych w folderze',
+		'mlang_labels_tabdescr' => 'Wy¶wietla powiêkszone obrazki, piêæ za jednym razem. Podaje rownie¿ wielko¶ci w pikselach.',
+		'mlang_tabs_tab' => 'Obrazki',
+	),
+	'si' => Array (
+		'mlang_labels_tablabel' => 'Seznam slik v mapi',
+		'mlang_labels_tabdescr' => 'Prikaže slike v velikem formatu, po pet naenkrat. Prikaže tudi dimenzije slik v toèkah.',
+		'mlang_tabs_tab' => 'Slike',
+	),
+	'fi' => Array (
+		'mlang_labels_tablabel' => 'Hakemistossa olevien kuvien luettelo',
+		'mlang_labels_tabdescr' => 'Listaa kuvat suurina, viisi kerrallaan. Kuvien pixel-mitat näytetään myös',
+		'mlang_tabs_tab' => 'Kuvat',
+	),
+	'tr' => Array (
+		'mlang_labels_tablabel' => 'Dizindeki resimlerin listelenmesi',
+		'mlang_labels_tabdescr' => 'Resimlerin büyük boyutlarda listelenmesi, bir defada 5 resim. Ayný zamanada resimin piksel boyutlarýda gösteriliyor.',
+		'mlang_tabs_tab' => 'Resim',
+	),
+	'se' => Array (
+		'mlang_labels_tablabel' => 'Lista på bilderna i katalogen',
+		'mlang_labels_tabdescr' => 'Listar bilderna i stor storlek, fem åt gången. Också pixelvärdena anges.',
+		'mlang_tabs_tab' => 'Bilder',
+	),
+	'pt' => Array (
+		'mlang_labels_tablabel' => 'Lista de imagens na directoria',
+		'mlang_labels_tabdescr' => 'Listar as imagens em grandes dimensões, cinco de cada vez. As dimensões em pixels das imagens são também mostradas.',
+		'mlang_tabs_tab' => 'Imagens',
+	),
+	'ru' => Array (
+		'mlang_labels_tablabel' => 'Ñïèñîê èçîáðàæåíèé â êàòàëîãå',
+		'mlang_labels_tabdescr' => 'Ïîêàçûâàåò äî ïÿòè èçîáðàæåíèé â áîëüøîì ðàçìåðå. Ðàçìåð èçîáðàæåíèé óêàçàí â ïèêñåëÿõ.',
+		'mlang_tabs_tab' => 'Èçîáðàæåíèÿ',
+	),
+	'ro' => Array (
+		'mlang_labels_tablabel' => 'Listeaza imaginile din directoare',
+		'mlang_labels_tabdescr' => 'Listeaza imaginile cu dimensiuni mari, cate cinci deodata. Afiseaza si dimensiunile in pixeli ale imaginilor.',
+		'mlang_tabs_tab' => 'Imagini',
+	),
+	'ch' => Array (
+	),
+	'sk' => Array (
+		'mlang_labels_tablabel' => 'Zoznam obrázkov v zložke',
+		'mlang_labels_tabdescr' => 'Zoznam obrázkov vo väèšom formáte, pä súèasne. Rozmery obrázkov v pixeloch sú zobrazené tiež.',
+		'mlang_tabs_tab' => 'Obrázky',
+	),
+	'lt' => Array (
+	),
+	'is' => Array (
+	),
+	'hr' => Array (
+		'mlang_labels_tablabel' => 'Popis slika u direktoriju',
+		'mlang_labels_tabdescr' => 'Izlistava slike velikih dimenzija, pet istodobno. Dimenzije u pixelima su isto prikazane.',
+		'mlang_tabs_tab' => 'Slike',
+	),
+	'hu' => Array (
+	),
+	'gl' => Array (
+	),
+	'th' => Array (
+	),
+	'gr' => Array (
+	),
+	'hk' => Array (
+		'mlang_labels_tablabel' => '¦C¥X¸ê®Æ§¨¤¤ªº¹Ï¤ù',
+		'mlang_labels_tabdescr' => '¦C¥X¤j¤Ø¤oªº¹Ï¤ù¡A¨C¦¸¤­­Ó¡C¦P®ÉÅã¥Ü¹Ïªº¹³¯À¤Ø¤o',
+		'mlang_tabs_tab' => '¹Ï¤ù',
+	),
+	'eu' => Array (
+	),
+	'bg' => Array (
+		'mlang_labels_tablabel' => 'Ïîêàçâàíå íà èçîáðàæåíèÿòà â äèðåêòîðèÿòà',
+		'mlang_labels_tabdescr' => 'Ïîêàæè èçîáðàæåíèÿòà â ãîëÿì ðàçìåð, ïî ïåò åäíîâðåìåííî. Pixel ðàçìåðà íà èçîáðàæåíèÿòà å ïîêàçàí ñúùî.',
+		'mlang_tabs_tab' => 'Èçîáðàæåíèÿ',
+	),
+	'br' => Array (
+		'mlang_labels_tablabel' => 'Lista de imagens no diretório',
+		'mlang_labels_tabdescr' => 'Listar as imagens em tamanho grande, cinco de cada vez. As dimensões das imagens em pixels também são mostradas.',
+		'mlang_tabs_tab' => 'Imagens',
+	),
+	'et' => Array (
+		'mlang_labels_tablabel' => 'Kataloogis paiknevate piltide listing',
+		'mlang_labels_tabdescr' => 'Näitab pilte suurelt, viis tükki korraga. Samuti kuvad piltide suurust pikslites.',
+		'mlang_tabs_tab' => 'Pildid',
+	),
+	'ar' => Array (
+	),
+	'he' => Array (
+	),
+	'ua' => Array (
+	),
+);
+?>

@@ -1,0 +1,102 @@
+## Includes the ratingLib:
+includeLibs.ts_rating = EXT:tt_rating/pi/class.tx_ttrating.php
+
+## Sets up the fields, that may be submitted in order to create items. Mandatory!
+FEData.tt_rating {
+  processScript = EXT:tt_rating/pi/rating_submit.inc
+  allowEdit {
+    rating = 1
+
+    // following items are used to pass configuration to fe_tce.php, They are NOT fields
+    // this may change later
+    minRating = 1
+    maxRating = 1
+    ratingStatSteps = 1
+  }
+}
+
+
+## This enables the tt_content.list item to display rating:
+plugin.tt_rating >
+plugin.tt_rating = USER
+plugin.tt_rating {
+  userFunc = tx_ttrating->main_rating
+
+  pid_list.field = pages
+  code.field = select_key
+
+  allowNew = 1
+  defaultCode = RESULT,VOTEFORM
+    //used if you allowNew
+  defaultTitle = rating
+  defaultDescription =
+    // the best and the worst rating value
+  highestRating = {$plugin.tt_rating.highestRating}
+  lowestRating = {$plugin.tt_rating.lowestRating}
+    // normally the same as in your voteform
+  ratingStatSteps = {$plugin.tt_rating.ratingStatSteps}
+    // the length of a bar or similiar
+  ratingOutputWidth = {$plugin.tt_rating.ratingOutputWidth}
+
+  submittedRatingMsg = {$plugin.tt_rating.submittedRatingMsg}
+  doubleRatingMsg = {$plugin.tt_rating.doubleRatingMsg}
+  wrap =
+
+  voteform < styles.content.mailform
+  voteform.layout = <td>###FIELD###</td><td><img src="clear.gif" width={$styles.content.mailform.border}></td>
+  voteform.stdWrap.wrap = <table border=0 cellspacing=0 cellpadding=0><tr>  | </tr></table>
+  voteform.data >
+  voteform.data = {$plugin.tt_rating.formdata}
+  voteform.no_cache=1
+  voteform.noValueInsert=1
+  voteform.wrap =
+
+  noRatingObj = TEXT
+  noRatingObj.value = {$plugin.tt_rating.notRatedMsg}
+  noRatingObj.textStyle < styles.content.textStyle
+
+
+  renderObj = COA
+  renderObj.stdWrap.wrap =  | <br>
+  renderObj {
+
+    10 = IMAGE
+    10.file = GIFBUILDER
+    10.file {
+      backColor = {$cSet.pageColor}
+      transparentBackground = 1
+      XY = [10.w]*{$plugin.tt_rating.tileImg},[10.h]
+      10 = IMAGE
+      10 {
+        file = {$plugin.tt_rating.badImgFile}
+        mask = {$plugin.tt_rating.maskImgFile}
+        tile = {$plugin.tt_rating.tileImg},1
+      }
+      15 = WORKAREA
+      15.set = 0,0,###RATING_MUL###*[10.w]*{$plugin.tt_rating.tileImg},[10.h]
+      20 = IMAGE
+      20 {
+        file = {$plugin.tt_rating.goodImgFile}
+        mask = {$plugin.tt_rating.maskImgFile}
+        tile = {$plugin.tt_rating.tileImg},1
+      }
+    }
+    20 = TEXT
+    20.value = {$plugin.tt_rating.textOutput}
+    20.textStyle < styles.content.textStyle
+
+    30 = TEXT
+    30.value = ###RATING_MSG###
+    30.required = 1
+    30.wrap =
+    30.textStyle < styles.content.textStyle
+
+  }
+}
+
+
+
+## This enables the tt_content.record item to display rating items:
+tt_rating >
+tt_rating = < plugin.tt_rating
+tt_rating.displayCurrentRecord = 1

@@ -1,0 +1,9 @@
+plugin.tt_calender >
+plugin.tt_calender {
+    # cat=plugin.calendar/file; type=file[html,htm,tmpl,txt]; label= Template File: This is a simple htmlfile where each part of the calendar is defined with HTML-code. To see an example with explanations, take a look at EXT:tt_calender/pi/calender_template.tmpl which is the default.
+  file.templateFile = EXT:tt_calender/pi/calendar_template.tmpl
+    # cat=plugin.calendar/typo; type=short; label=Font face
+  fontFace = verdana
+    # cat=plugin.calendar//; type=int+; label=Max age (days): If set, the items will automatically disappear from the calendar after this number of days.
+  maxAge =
+}

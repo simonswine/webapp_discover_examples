@@ -1,0 +1,19 @@
+  # cat=basic/enable; type=boolean; label=Enable these settings: If not set, the two settings below plays no role.
+en = 1
+en {
+	  # cat=basic/enable; type=boolean; label=Add font tag buttons: Setting this adds the buttons for formatting content with font-tags.
+	extended = 1
+	  # cat=basic/enable; type=boolean; label=Add table wizard: The table wizard allows you to add tables and edit the properties afterwards. Normally table-HTML is removed from the inserted content, but this option will configure Typo3 to leave table related tags.
+	tables = 0
+}
+
+## TSConstantsEditor Config 
+TSConstantEditor.basic { 
+  header = Extending Rich Text Editor toolbar
+  description = The Rich Text Editor (RTE) comes with a default set of buttons visible. However you can configure various properties which affects which buttons are available and how the content is processed before it enters the database for storage.
+  bulletlist = The buttons used for font tag formatting (1) // The table button (2) 
+  image = conf_img.gif
+
+  1=en.extended,en
+  2=en.tables,en
+}

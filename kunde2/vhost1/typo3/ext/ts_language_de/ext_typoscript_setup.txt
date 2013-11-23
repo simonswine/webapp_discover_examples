@@ -1,0 +1,149 @@
+## Setting the TypoScript language to german:
+#config.language = de
+config.locale_all = de_DE
+
+
+# ***********************************
+#  Login form as used in 'content (default)'
+# ***********************************
+tt_content.login.20.dataArray {
+    10.label.lang.de = Benutzername:
+    20.label.lang.de = Password:
+    40.value.lang.de = Login
+}
+
+[usergroup = *]
+tt_content.login.20.dataArray {
+    10.label.lang.de = Benutzername: <!--###USERNAME###-->
+    20 >
+    40.value.lang.de = Logout
+}
+[global]
+
+
+
+
+# ***********************
+#  Search dialog object
+# ***********************
+
+tt_content.search.30.dataArray {
+    10.label.lang.de = Suchen:
+    20.label.lang.de = in
+    20.valueArray {
+      10.label.lang.de = Überschriften und Stichworten
+      20.label.lang.de = Seiteninhalt
+    }
+    40.value.lang.de = Suche starten
+}
+
+
+
+# ***********************
+#  Search result page object
+# ***********************
+tt_content.search.20 {
+  layout.10.lang.de = Suchergebnis: ###RANGELOW###-###RANGEHIGH### von ###TOTAL###
+  noResultObj.10.lang.de = Die Suche brachte kein Ergebnis!
+  next.lang.de = Nächste
+  prev.lang.de = Vorherige
+}
+
+
+
+# ***********************
+#  Default Guestbook form
+# ***********************
+plugin.tt_guest.postform.dataArray {
+  10.label.lang.de = Überschrift:
+  20.label.lang.de = Dein Kommentar:
+  30.label.lang.de = Name:
+  40.label.lang.de = Email:
+  50.label.lang.de = Homepage:
+  60.value.lang.de = Eintragen
+}
+
+
+# ***********************
+#  Default List Board form
+# ***********************
+plugin.tt_board_list.postform.dataArray {
+  10.label.lang.de = Thema:
+  20.label.lang.de = Mitteilung:
+  30.label.lang.de = Name:
+  40.label.lang.de = Email:
+  50.label.lang.de = Benachrichtigung<BR>bei Antwort(en):
+  60.value.lang.de = Antwort absenden
+}
+plugin.tt_board_list.postform_newThread.dataArray {
+  10.label.lang.de = Thema:
+  20.label.lang.de = Mitteilung:
+  30.label.lang.de = Name:
+  40.label.lang.de = Email:
+  50.label.lang.de = Benachrichtigung<BR>bei Antwort(en):
+  60.value.lang.de = Diskussion eröffnen
+}
+
+# ***********************
+#  Default Tree Board form
+# ***********************
+plugin.tt_board_tree.postform.dataArray {
+  10.label.lang.de = Thema:
+  20.label.lang.de = Mitteilung:
+  30.label.lang.de = Name:
+  40.label.lang.de = Email:
+  50.label.lang.de = Benachrichtigung<BR>bei Antwort(en):
+  60.value.lang.de = Antwort absenden
+}
+plugin.tt_board_tree.postform_newThread.dataArray {
+  10.label.lang.de = Thema:
+  20.label.lang.de = Mitteilung:
+  30.label.lang.de = Name:
+  40.label.lang.de = Email:
+  50.label.lang.de = Benachrichtigung<BR>bei Antwort(en):
+  60.value.lang.de = Diskussion eröffnen
+}
+
+
+# ***********************
+#  time and date
+# ***********************
+
+plugin.tt_news {
+  archiveTitleCObject {
+    10.strftime = %B - %Y
+  }
+
+  getRelatedCObject {
+    20.strftime = %e.%m.%y %H:%M
+  }
+
+  displaySingle {
+    date_stdWrap.strftime= %e.%m.%y
+    time_stdWrap.strftime= %H:%M
+  }
+
+  displayLatest {
+    date_stdWrap.strftime= %e.%m.%y
+    time_stdWrap.strftime= %H:%M
+  }
+
+  displayList {
+    date_stdWrap.strftime= %A, %e. %B
+    time_stdWrap.strftime= %e.%m.%y %H:%M
+  }
+}
+
+plugin.tt_board_list {
+  date_stdWrap.strftime= %e.%m.%y
+  time_stdWrap.strftime= %H:%M  
+  age_stdWrap.age = " min| Std| Tagen| Jahren"
+  list_forums.author_stdWrap.wrap = von |
+}
+
+plugin.tt_board_tree {
+  date_stdWrap.strftime= %e.%m.%y
+  time_stdWrap.strftime= %H:%M
+  age_stdWrap.age = " min| Std| Tagen| Jahren"
+  list_forums.author_stdWrap.wrap = von |
+}

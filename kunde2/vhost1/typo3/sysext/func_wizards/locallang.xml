@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Function module labels (framework)</description>
+		<type>module</type>
+		<csh_table></csh_table>
+		<fileId>EXT:func_wizards/locallang.xml</fileId>
+		<labelContext type="array">
+			<label index="wiz_lWizards"></label>
+			<label index="mod_wizards"></label>
+		</labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="wiz_lWizards">Select Wizard</label>
+			<label index="mod_wizards">Wizards</label>
+		</languageKey>
+		<languageKey index="dk" type="array">
+			<label index="wiz_lWizards">Vælg funktion</label>
+			<label index="mod_wizards">Hjælpefunktioner</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="wiz_lWizards">Wähle Assistenten</label>
+			<label index="mod_wizards">Assistenten</label>
+		</languageKey>
+		<languageKey index="no" type="array">
+			<label index="wiz_lWizards">Velg funksjon</label>
+			<label index="mod_wizards">Hjelpefunksjoner</label>
+		</languageKey>
+		<languageKey index="it" type="array">
+			<label index="wiz_lWizards">Scegli Wizard</label>
+			<label index="mod_wizards">Wizard</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="wiz_lWizards">Sélection d'Assistant</label>
+			<label index="mod_wizards">Assistants</label>
+		</languageKey>
+		<languageKey index="es" type="array">
+			<label index="wiz_lWizards">Seleccionar Experto</label>
+			<label index="mod_wizards">Expertos</label>
+		</languageKey>
+		<languageKey index="nl" type="array">
+			<label index="wiz_lWizards">Selecteer Assistent</label>
+			<label index="mod_wizards">Assistenten</label>
+		</languageKey>
+		<languageKey index="cz" type="array">
+			<label index="wiz_lWizards">Zvolte Pomocníka</label>
+			<label index="mod_wizards">Assistenten</label>
+		</languageKey>
+		<languageKey index="pl" type="array">
+			<label index="wiz_lWizards">Wybierz Kreatora</label>
+			<label index="mod_wizards">Pomocníci</label>
+		</languageKey>
+		<languageKey index="si" type="array">
+			<label index="wiz_lWizards">Izberite čarovnika</label>
+			<label index="mod_wizards">Kreatorzy</label>
+		</languageKey>
+		<languageKey index="fi" type="array">
+			<label index="wiz_lWizards">Valitse ohjattu toiminto</label>
+			<label index="mod_wizards">Ohjatut toiminnot</label>
+		</languageKey>
+		<languageKey index="tr" type="array">
+			<label index="wiz_lWizards">Sihirbaz seçimi</label>
+			<label index="mod_wizards">Sihirbazlar</label>
+		</languageKey>
+		<languageKey index="se" type="array">
+			<label index="wiz_lWizards">Välj en Guide</label>
+			<label index="mod_wizards">Guider</label>
+		</languageKey>
+		<languageKey index="pt" type="array">
+			<label index="wiz_lWizards">Selecionar Wizard</label>
+			<label index="mod_wizards">Wizards</label>
+		</languageKey>
+		<languageKey index="ru" type="array">
+			<label index="wiz_lWizards">Выбрать помощника</label>
+			<label index="mod_wizards">Помощники</label>
+		</languageKey>
+		<languageKey index="ro" type="array">
+			<label index="wiz_lWizards">Alege asistent</label>
+			<label index="mod_wizards">Asistenţi</label>
+		</languageKey>
+		<languageKey index="ch" type="array">
+		</languageKey>
+		<languageKey index="sk" type="array">
+			<label index="wiz_lWizards">Zvoľ pomocníka</label>
+			<label index="mod_wizards">Pomocník</label>
+		</languageKey>
+		<languageKey index="lt" type="array">
+			<label index="wiz_lWizards">Pasirinkite vedlį</label>
+			<label index="mod_wizards">Vedliai</label>
+		</languageKey>
+		<languageKey index="is" type="array">
+		</languageKey>
+		<languageKey index="hr" type="array">
+			<label index="wiz_lWizards">Odaberi čarobnjaka</label>
+			<label index="mod_wizards">Čarobnjaci</label>
+		</languageKey>
+		<languageKey index="hu" type="array">
+			<label index="wiz_lWizards">Varázsló kiválasztása</label>
+			<label index="mod_wizards">Varázslók</label>
+		</languageKey>
+		<languageKey index="gl" type="array">
+		</languageKey>
+		<languageKey index="th" type="array">
+			<label index="wiz_lWizards">เลือกพ่อมด</label>
+			<label index="mod_wizards">พ่อมด</label>
+		</languageKey>
+		<languageKey index="gr" type="array">
+		</languageKey>
+		<languageKey index="hk" type="array">
+		</languageKey>
+		<languageKey index="eu" type="array">
+		</languageKey>
+		<languageKey index="bg" type="array">
+		</languageKey>
+		<languageKey index="br" type="array">
+			<label index="wiz_lWizards">Selecionar Assistente</label>
+			<label index="mod_wizards">Assistentes</label>
+		</languageKey>
+		<languageKey index="et" type="array">
+		</languageKey>
+		<languageKey index="ar" type="array">
+		</languageKey>
+		<languageKey index="he" type="array">
+			<label index="wiz_lWizards">בחירת אשף</label>
+			<label index="mod_wizards">אשפים</label>
+		</languageKey>
+		<languageKey index="ua" type="array">
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="default" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="dk" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="no" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="it" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="es" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="nl" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="cz" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="pl" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="si" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="fi" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="tr" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="se" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="pt" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="ru" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="ro" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="ch" type="array">
+		</languageKey>
+		<languageKey index="sk" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="lt" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="is" type="array">
+		</languageKey>
+		<languageKey index="hr" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="hu" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="gl" type="array">
+		</languageKey>
+		<languageKey index="th" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="gr" type="array">
+		</languageKey>
+		<languageKey index="hk" type="array">
+		</languageKey>
+		<languageKey index="eu" type="array">
+		</languageKey>
+		<languageKey index="bg" type="array">
+		</languageKey>
+		<languageKey index="br" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="et" type="array">
+		</languageKey>
+		<languageKey index="ar" type="array">
+		</languageKey>
+		<languageKey index="he" type="array">
+			<label index="wiz_lWizards" type="integer">90660162</label>
+			<label index="mod_wizards" type="integer">252927306</label>
+		</languageKey>
+		<languageKey index="ua" type="array">
+		</languageKey>
+	</orig_hash>
+</T3locallang>

@@ -1,0 +1,33 @@
+****************
+TODO and IDEAS
+****************
+- The Workflow system should implement Versioning and History/Undo for change-tracking. 
+- Email reviewing (notification, direct link to publish etc.)
+- See email from Bernhard Villiger - good explanation/help for defining requirements.
+- side-by-side view of content and edit-fields
+- reviewer-comments could be added in RTE and shown in special color which can then be removed automatically?
+- "Workflow" in the Page module: That a user can create a ToDo item with a relation to the page/the record and target it to a user (plain workflow, but with a relation contained to this record). When the ToDo item is "sent" the record can be hidden/made into a new version.
+- Workflow option: Browse for target page/destination page
+- Email notification / reports with links to stuff...
+- create new workflow definition in Task Center/To-Do (admin)
+- History/Undo based change-tracking for times of redirection.
+- Cron-job can send remindes with todo-items which must be completed within XXX days + new messages that has come in.
+- [Kasper] Check mailbox: Lots of good ideas there.
+
+Flows:
+- Click page/record in tree. Select "Workflow" -> secondary menu of TO-DO workflows.
+- Edit -> goes into workflow. Option: Make new version.
+- New -> goes into workflow.
+
+Interesting quote on previewing/versioning:
+>Integrated in this would be previewing features on the frontend. That is some feature that allows one element to actually load the value of >another element (the future/previous version) and display that instead.
+>On the page level this feature is done by simply implementing support for setting an alternative "internal" page id which is used to fetch >content - as we have previously talked about (that one pages fetches the content from another without being a shortcut)
+
+Also see:
+- [Kasper] "Workflow" folder in Mailbox 
+
+*******************
+BUGS
+*******************
+- E.g. if you change the status of a task (e.g. reject a task) the left frame (with tasks, messages, etc.) doesn't get updated. 
+- Sometimes (eg. if you didn't select a table while creating the workflow) the user creates a new task, he selects a workflow, types in the information like deadline and comments, submits it and ... nothing happens: typo returns to the task-create menu without a task having been created. I would appreciate a short message like why the task was not generated.

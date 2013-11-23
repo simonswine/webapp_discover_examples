@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Standard Help Module labels</description>
+		<type>module</type>
+		<fileId>EXT:lang/locallang_mod_help.xml</fileId>
+		<labelContext type="array">
+		</labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="mlang_labels_tablabel">Help and support</label>
+			<label index="mlang_tabs_tab">Help</label>
+		</languageKey>
+		<languageKey index="dk" type="array">
+			<label index="mlang_labels_tablabel">Hjælp og support</label>
+			<label index="mlang_tabs_tab">Hjælp</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="mlang_labels_tablabel">Hilfe und Support</label>
+			<label index="mlang_tabs_tab">Hilfe</label>
+		</languageKey>
+		<languageKey index="no" type="array">
+			<label index="mlang_labels_tablabel">Hjelp og support</label>
+			<label index="mlang_tabs_tab">Hjelp</label>
+		</languageKey>
+		<languageKey index="it" type="array">
+			<label index="mlang_labels_tablabel">Aiuto e supporto</label>
+			<label index="mlang_tabs_tab">Aiuto</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="mlang_labels_tablabel">Aide et support technique</label>
+			<label index="mlang_tabs_tab">Aide</label>
+		</languageKey>
+		<languageKey index="es" type="array">
+			<label index="mlang_labels_tablabel">Ayuda y soporte</label>
+			<label index="mlang_tabs_tab">Ayuda</label>
+		</languageKey>
+		<languageKey index="nl" type="array">
+			<label index="mlang_labels_tablabel">Help en ondersteuning</label>
+			<label index="mlang_tabs_tab">Help</label>
+		</languageKey>
+		<languageKey index="cz" type="array">
+			<label index="mlang_labels_tablabel">Nápověda a podpora</label>
+			<label index="mlang_tabs_tab">Nápověda</label>
+		</languageKey>
+		<languageKey index="pl" type="array">
+			<label index="mlang_labels_tablabel">Pomoc i wsparcie</label>
+			<label index="mlang_tabs_tab">Pomoc</label>
+		</languageKey>
+		<languageKey index="si" type="array">
+			<label index="mlang_labels_tablabel">Pomoč in podpora</label>
+			<label index="mlang_tabs_tab">Pomoč</label>
+		</languageKey>
+		<languageKey index="fi" type="array">
+			<label index="mlang_labels_tablabel">Ohjeet ja tuki</label>
+			<label index="mlang_tabs_tab">Ohjeet</label>
+		</languageKey>
+		<languageKey index="tr" type="array">
+			<label index="mlang_labels_tablabel">Yardım ve destek</label>
+			<label index="mlang_tabs_tab">Yardım</label>
+		</languageKey>
+		<languageKey index="se" type="array">
+			<label index="mlang_labels_tablabel">Hjälp och support</label>
+			<label index="mlang_tabs_tab">Hjälp</label>
+		</languageKey>
+		<languageKey index="pt" type="array">
+			<label index="mlang_labels_tablabel">Ajuda e suporte</label>
+			<label index="mlang_tabs_tab">Ajuda</label>
+		</languageKey>
+		<languageKey index="ru" type="array">
+			<label index="mlang_labels_tablabel">Справка и поддержка</label>
+			<label index="mlang_tabs_tab">Справка</label>
+		</languageKey>
+		<languageKey index="ro" type="array">
+			<label index="mlang_labels_tablabel">Ajutor si suport</label>
+			<label index="mlang_tabs_tab">Ajutor</label>
+		</languageKey>
+		<languageKey index="ch" type="array">
+			<label index="mlang_labels_tablabel">帮助与支持</label>
+			<label index="mlang_tabs_tab">帮助</label>
+		</languageKey>
+		<languageKey index="sk" type="array">
+			<label index="mlang_labels_tablabel">Pomoc a podpora</label>
+			<label index="mlang_tabs_tab">Pomoc</label>
+		</languageKey>
+		<languageKey index="lt" type="array">
+			<label index="mlang_labels_tablabel">Pagalba ir palaikymas</label>
+			<label index="mlang_tabs_tab">Pagalba</label>
+		</languageKey>
+		<languageKey index="is" type="array">
+			<label index="mlang_labels_tablabel">Hjálp og þjónusta</label>
+			<label index="mlang_tabs_tab">Hjálp</label>
+		</languageKey>
+		<languageKey index="hr" type="array">
+			<label index="mlang_labels_tablabel">Pomoć i podrška</label>
+			<label index="mlang_tabs_tab">Pomoć</label>
+		</languageKey>
+		<languageKey index="hu" type="array">
+			<label index="mlang_labels_tablabel">Súgó és tanácsadás</label>
+			<label index="mlang_tabs_tab">Súgó</label>
+		</languageKey>
+		<languageKey index="gl" type="array">
+			<label index="mlang_labels_tablabel">Ikiuut tapersuullu</label>
+			<label index="mlang_tabs_tab">Ikiuut</label>
+		</languageKey>
+		<languageKey index="th" type="array">
+			<label index="mlang_labels_tablabel">การช่วยเลือและการให้การสนับสนุน</label>
+			<label index="mlang_tabs_tab">การช่วยเหลือ</label>
+		</languageKey>
+		<languageKey index="gr" type="array">
+		</languageKey>
+		<languageKey index="hk" type="array">
+			<label index="mlang_labels_tablabel">幫助與支援</label>
+			<label index="mlang_tabs_tab">幫助</label>
+		</languageKey>
+		<languageKey index="eu" type="array">
+			<label index="mlang_labels_tablabel">Laguntza eta laguntza teknikoa</label>
+			<label index="mlang_tabs_tab">Laguntza</label>
+		</languageKey>
+		<languageKey index="bg" type="array">
+			<label index="mlang_labels_tablabel">Помощ и поддръжка</label>
+			<label index="mlang_tabs_tab">Помощ</label>
+		</languageKey>
+		<languageKey index="br" type="array">
+			<label index="mlang_labels_tablabel">Ajuda e suporte</label>
+			<label index="mlang_tabs_tab">Ajuda</label>
+		</languageKey>
+		<languageKey index="et" type="array">
+			<label index="mlang_labels_tablabel">Abi ja tugi</label>
+			<label index="mlang_tabs_tab">Abi</label>
+		</languageKey>
+		<languageKey index="ar" type="array">
+			<label index="mlang_labels_tablabel">مساعدة و مساندة</label>
+			<label index="mlang_tabs_tab">مساعدة</label>
+		</languageKey>
+		<languageKey index="he" type="array">
+			<label index="mlang_labels_tablabel">עזרה ותמיכה טכנית</label>
+			<label index="mlang_tabs_tab">עזרה</label>
+		</languageKey>
+		<languageKey index="ua" type="array">
+		</languageKey>
+		<languageKey index="lv" type="array">
+			<label index="mlang_labels_tablabel">Palīdzība un atbalsts</label>
+			<label index="mlang_tabs_tab">Palīdzība</label>
+		</languageKey>
+		<languageKey index="jp" type="array">
+		</languageKey>
+		<languageKey index="vn" type="array">
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="default" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="dk" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="no" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="it" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="es" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="nl" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="cz" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="pl" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="si" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="fi" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="tr" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="se" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="pt" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="ru" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="ro" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="ch" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="sk" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="lt" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="is" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="hr" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="hu" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="gl" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="th" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="gr" type="array">
+		</languageKey>
+		<languageKey index="hk" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="eu" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="bg" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="br" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="et" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="ar" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="he" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="ua" type="array">
+		</languageKey>
+		<languageKey index="lv" type="array">
+			<label index="mlang_labels_tablabel" type="integer">249232618</label>
+			<label index="mlang_tabs_tab" type="integer">111308628</label>
+		</languageKey>
+		<languageKey index="jp" type="array">
+		</languageKey>
+		<languageKey index="vn" type="array">
+		</languageKey>
+	</orig_hash>
+</T3locallang>

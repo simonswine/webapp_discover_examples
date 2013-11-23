@@ -1,0 +1,20 @@
+
+## Rendering of calenders
+## See TSref and/or EXT:tt_calender/pi/calendar.inc for details about the TypoScript config. 
+plugin.tt_calender >
+plugin.tt_calender = PHP_SCRIPT
+plugin.tt_calender {
+  file = EXT:tt_calender/pi/calendar.inc
+  templateFile = {$plugin.tt_calender.file.templateFile}
+  pid_list.field = pages
+  recursive.field = recursive
+  fontFace = {$plugin.tt_calender.fontFace}
+  maxAge = {$plugin.tt_calender.maxAge}
+  parseFunc < styles.content.parseFunc
+}
+
+
+## This enables the record item to display calendar items
+tt_calender >
+tt_calender < plugin.tt_calender
+tt_calender.displayCurrentRecord = 1

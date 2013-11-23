@@ -1,0 +1,2 @@
+  # cat=basic/enable; type=boolean; label=Try to set as default: If set the TypoScript value 'config.language' will be set with the language key. Unless it is overridden by any later value that should set this langauge as default.
+en = 0

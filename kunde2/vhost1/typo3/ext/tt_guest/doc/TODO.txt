@@ -1,0 +1,4 @@
+- Related the guestbook items back to the content elemnet inserting it - thus we can have more guestbooks on a single page.
+- Apply the option of using Template Objects from TemplaVoila for display
+- use locallang.php files.
+- Search mailbox for more...

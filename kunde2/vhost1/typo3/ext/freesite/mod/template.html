@@ -1,0 +1,158 @@
+<!DOCTYPE html public "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<STYLE type="text/css">
+	select  {  font-family: Verdana, Arial, Helvetica; font-size: 10px }
+	textarea  {  font-family: Verdana, Arial, Helvetica; font-size: 10px} 
+	input   {  font-family: Verdana, Arial, Helvetica; font-size: 10px }
+	
+	TD  {  font-family: Verdana, Arial, Helvetica; font-size: 10px }
+</STYLE>
+<script>
+var thePS_template = "";
+var thePS_pages = "";
+
+function openTemplates()	{
+	var theW = window.open("index.php?script=template","popup","height=580,width=400,status=0,menubar=0,resizable=1,scrollbars");
+	thePS_template = document.forms[0]["data[TEMPLATE]"];
+	theW.theParentSelector = thePS_template;
+	theW.focus();
+}
+function openPages()	{
+	var theW = window.open("index.php?script=pages","popup","height=580,width=400,status=0,menubar=0,resizable=1,scrollbars");
+	thePS_pages = document.forms[0]["data[DUMMY_PAGES]"];
+	theW.theParentSelector = thePS_pages;
+	theW.focus();
+}
+</script>
+<TITLE>Typo3 Application: Freesite Creator</TITLE>
+</HEAD>
+<BODY bgcolor="#CCCCCC" link="black" alink="gray" vlink="black" marginwidth="3" marginheight="1">
+<DIV align="center">
+	<TABLE border="0" cellspacing="0" cellpadding="0" width="333" bgcolor="#cccccc">
+		<TR>
+			<TD><IMG src="typo3logo.gif" width="333" height="43" vspace="10" border="0" alt="">
+			</TD>
+		</TR>
+		<TR>
+			<TD bgcolor="black">
+				<TABLE width="100%" border="0" cellspacing="1" cellpadding="10">
+					<TR>
+						<TD bgcolor="#F4F0E8">
+<form action="index.php" method="POST">
+<FONT face="verdana,arial,helvetica" size="1">
+
+<div align="center"><B><FONT size="4">Freesite Creator</FONT></B></div><br><br>
+
+
+###UPDATE_CREATE###<br>
+<br>
+<BR>
+
+<FONT size="2"><b>User information:</b></font><br><br>
+
+<b>Name:</b><br>
+###FIELD_realName###<br>
+Enter the christian name of the user.<br>
+<br>
+
+
+<b>Email address:</b><BR>
+###FIELD_email###<br>
+Enter a <i>valid</i> email-address.<br>
+<br>
+
+
+<b>Typo3 Username:</b><BR>
+###FIELD_username###<br>
+This is the preferred username of the new user. The username must be between 5 and 20 characters A-Z, must be unique, lowercase and without spaces.<br>
+The username is also the title of the new usergroup.<br>
+<br>
+
+
+<b>Typo3 Password:</b><BR>
+###FIELD_password###<br>
+Passwords are accepted <i>only</i> if they match <i>perfectly</i>, include upper- and lowercase characters.<br>
+Passwords must be at least 5 characters long.<br>
+<br>
+
+
+<!-- Optional field. You can remove it from the template -->
+<b>Language:</b><BR>
+###FIELD_lang###<br>
+Language of the Typo3 backend.<br>
+<br>
+
+
+<br>
+<br>
+<FONT size="2"><b>Site configuration:</b></font><br><br>
+
+
+<!-- Optional field. You can remove it from the template -->
+<b>Website title:</b><br>
+###TITLE###<br>
+Optional.<br>
+The website title is always shown in the title-bar of the webbrowser before the page title.<br>
+This example shows how the website title "Typo3" would display:<br><br>
+<img src="titleshow.gif" width=226 height=58 alt="" border="0"><br>
+<br>
+
+
+<!-- Optional field. You can remove it from the template -->
+<b>Domain:</b><br>
+###DOMAIN###<br>
+Optional.<br>
+If the website is on a certain domain, enter it here. Eg. "www.your-domain-name.com"<br>
+<b>Note:</b> If the DNS and webserver <i>is not</i> allready configured to direct the domain to this Typo3-site, the new user will not be able to login until that happens!<br>
+<br>
+
+
+<!-- Optional field. You can remove it from the template -->
+<b>Directory:</b><br>
+###FOLDER###<br>
+Optional.<br>
+If you want your site to run from a certain directory <i>in the current site path or above entered domain</i> you can enter that directory here. Eg. if you want "www.your-domain-name.com/my_subdir/" to be the path to your site, enter "my_subdir" here.<br>
+Allowed characters are standard alphanumeric characters. You can enter max 50 characters and spaces are not allowed.<br>
+<br>
+
+
+<!-- Optional field. You can remove it from the template -->
+<b>Template:</b><br>
+###TEMPLATE###<br>
+Select a template for your site. <br>
+<b>Click here to see a <a href="#" onClick="openTemplates(); return false;">list of the available templates.</a></b><br>
+###TEMPLATE_VIEW###
+<br>
+
+
+<!-- Optional field. You can remove it from the template -->
+<b>Dummy pages:</b><br>
+###DUMMY_PAGES###<br>
+Select a set of dummy pages to be copied to your site. <br>
+<b>Click here to see a <a href="#" onClick="openPages(); return false;">list of the available dummy page sets.</a></b> 
+<font face="Verdana" size="1">###DUMMY_PAGES_VIEW###</font>
+<br>
+<br>
+<b>Testdriving a dummy page set with the templates?</B><BR>
+Yes, click here to <a href="###BACK_PATH###index.php?testdrive" target="testdrive_frame">see the dummy page sets in action with the templates!</a>
+<br><br>
+
+
+
+
+
+###UPDATE_CREATE###
+
+	
+</FONT>
+</form>
+						</TD>
+					</TR>
+				</TABLE>
+			</TD>
+		</TR>
+	</TABLE>
+</DIV>
+</BODY>
+</HTML>

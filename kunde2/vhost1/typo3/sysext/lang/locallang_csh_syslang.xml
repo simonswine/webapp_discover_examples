@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>CSH for System Languages table.</description>
+		<type>CSH</type>
+		<fileId>EXT:lang/locallang_csh_syslang.xml</fileId>
+		<csh_table>sys_language</csh_table>
+		<keep_original_text>1</keep_original_text>
+		<ext_filename_template>EXT:csh_###LANGKEY###/lang/###LANGKEY###.locallang_csh_syslang.xml</ext_filename_template>
+		<labelContext type="array">
+		</labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title.description">Enter the name of this additional system language.</label>
+			<label index="hidden.description">This option will hide the system language from being available in the backend.</label>
+			<label index=".description">Defines which languages are alternatively available on each webpage.</label>
+			<label index=".details">The Web&gt;Page module has a feature which allows users to edit page content divided into not only columns but also languages. The languages available for translation are determined by the number of Website Language record created.
+For a webpage to be available in another language an &quot;Alternative Page Language&quot; record must be created on the page.</label>
+			<label index="_.seeAlso">pages_language_overlay</label>
+		</languageKey>
+		<languageKey index="dk">EXT:csh_dk/lang/dk.locallang_csh_syslang.xml</languageKey>
+		<languageKey index="nl">EXT:csh_nl/lang/nl.locallang_csh_syslang.xml</languageKey>
+		<languageKey index="fi">EXT:csh_fi/lang/fi.locallang_csh_syslang.xml</languageKey>
+		<languageKey index="hr">EXT:csh_hr/lang/hr.locallang_csh_syslang.xml</languageKey>
+		<languageKey index="it">EXT:csh_it/lang/it.locallang_csh_syslang.xml</languageKey>
+		<languageKey index="fr">EXT:csh_fr/lang/fr.locallang_csh_syslang.xml</languageKey>
+		<languageKey index="de">EXT:csh_de/lang/de.locallang_csh_syslang.xml</languageKey>
+		<languageKey index="no">EXT:csh_no/lang/no.locallang_csh_syslang.xml</languageKey>
+	</data>
+</T3locallang>

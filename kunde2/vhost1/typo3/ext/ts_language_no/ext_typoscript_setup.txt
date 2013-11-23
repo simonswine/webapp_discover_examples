@@ -1,0 +1,117 @@
+## Setting the TypoScript language to norwegian:
+#config.language = no
+
+
+# ***********************************
+#  Login form as used in 'content (default)'
+# ***********************************
+tt_content.login.20.dataArray {
+    10.label.lang.no = Brukernavn:
+    20.label.lang.no = Passord:
+    40.value.lang.no = Logg inn
+}
+
+[usergroup = *]
+tt_content.login.20.dataArray {
+    10.label.lang.no = Brukernavn: <!--###USERNAME###--> 
+    20 >
+    40.value.lang.no = Logg ut
+}
+[global]
+
+
+
+
+# ***********************
+#  Search dialog object
+# ***********************
+
+tt_content.search.30.dataArray {
+    10.label.lang.no = Søkeord:
+    20.label.lang.no = Søk i:
+    20.valueArray {
+      10.label.lang.no = Overskrift og nøkkelord
+      20.label.lang.no = Sideinnhold
+    }
+    40.value.lang.no = Start søk!
+}
+
+
+
+# ***********************
+#  Search result page object
+# ***********************
+tt_content.search.20 {
+  layout.10.lang.no = Søkeresultat: ###RANGELOW###-###RANGEHIGH### av ###TOTAL###
+  noResultObj.10.lang.no = Beklager, søket ditt gav ingen treff!
+  next.lang.no = Neste
+  prev.lang.no = Forrige
+}
+
+
+
+# ***********************
+#  Default Guestbook form
+# ***********************
+plugin.tt_guest.postform.dataArray {
+  10.label.lang.no = Overskrift:
+  20.label.lang.no = Din kommentar:
+  30.label.lang.no = Navn:
+  40.label.lang.no = E-post:
+  50.label.lang.no = Hjemmeside:
+  60.value.lang.no = Legg inn meldingen
+}
+
+
+# ***********************
+#  Default List Board form
+# ***********************
+plugin.tt_board_list.postform.dataArray {
+  10.label.lang.no = Emne:
+  20.label.lang.no = Melding:
+  30.label.lang.no = Navn:
+  40.label.lang.no = E-post:
+  50.label.lang.no = Send e-post<BR>ved svar: 
+  60.value.lang.no = Send svar
+}
+plugin.tt_board_list.postform_newThread.dataArray {
+  10.label.lang.no = Emne:
+  20.label.lang.no = Melding:
+  30.label.lang.no = Navn:
+  40.label.lang.no = E-post:
+  50.label.lang.no = Send e-post<BR>ved svar: 
+  60.value.lang.no = Lag ny tråd
+}
+plugin.tt_board_list.postform.badMess = Du må fylle ut følgende felt:
+plugin.tt_board_list.postform_newThread.badMess = Du må fylle ut følgende felt:
+
+# ***********************
+#  Default Tree Board form
+# ***********************
+plugin.tt_board_tree.postform.dataArray {
+  10.label.lang.no = Emne:
+  20.label.lang.no = Melding:
+  30.label.lang.no = Navn:
+  40.label.lang.no = E-post:
+  50.label.lang.no = Send e-post<BR>ved svar: 
+  60.value.lang.no = Send svar
+}
+plugin.tt_board_tree.postform_newThread.dataArray {
+  10.label.lang.no = Emne:
+  20.label.lang.no = Melding:
+  30.label.lang.no = Navn:
+  40.label.lang.no = E-post:
+  50.label.lang.no = Send e-post<BR>ved svar: 
+  60.value.lang.no = Lag ny tråd
+}
+plugin.tt_board_tree.postform.badMess = Du må fylle ut følgende felt:
+plugin.tt_board_tree.postform_newThread.badMess = Du må fylle ut følgende felt:
+
+
+# ***********************
+#  Newsletter subscription
+# ***********************
+plugin.feadmin.dmailsubscription.evalErrors.email {
+  uniqueLocal = Du er tilsynelatende allerede registrert med denne e-post adressen!
+  email = Dette er ikke en korrekt e-post adresse!
+}

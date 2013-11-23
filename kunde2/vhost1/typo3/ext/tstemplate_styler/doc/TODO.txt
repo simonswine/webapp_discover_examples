@@ -1,0 +1,59 @@
+*************
+STATUS
+*************
+This extension is actually working but has not been developer since its creation. 
+One obstacle for its success seems to be the very hard configuration of the "editorcfg". One idea is to have a tool which can automatically generate this structure from the default output of the plugins or whatever.
+Whether this will ever be finished is hard to say since many other things are more important and basically it is made to edit stylesheets which can be done with external editors as well. However it has a very useful feature which allows you to see how your id/class attributes are hierarchically arranged in the DOM of a page. That is very useful.
+
+
+*****************
+TODO (some in danish, sorry)
+****************
+- Document API
+- Support not just pixels for fontsizes, but also "em" and "%", See Message-ID: <17459949362.20021029003751@unlimited-vision.net>
+
++ implementere på DIBS/TREX        (!!!)
+  - redigere selectors uden for CSS-editor config  
+  - skrive NYE linier til respektive filer 
+  - bug: mangler chr(10) efter linier.
+
+-------------------------------------------------
+Redigering af konfigureret stylesheet:
+- Angivelse af et/flere dokumenter (css/html) (ligger på samme niveau)
+- I html-doks: <style>-sektioner og <LINK>-referencer indlæses. (som så ligger på underniveau)
+- Det registreres i hvilket dokument/sektion i html at style-koden læses - således skrive den tilbage dertil.
+- Ny kode skrives til ??? (der, hvor det forrige blev skrevet?)
+- Al stylekode for dokumenterne indlæses i rækkefølge og bruges til display.
+
+Hver af disse specifikt angivne style-collections kan repræsentere forskellig brug i template. Som sådan er de behandlet helt uafhængigt af indholdet i Setup feltet (bortset fra at PAGE-objekterne skal/bør matche...)
+
+BEC strategi:
+
+CSS_editor er rootlevel object for style-config.
+[PAGE-object].CSS_editor definerer "main" for den enkelte side
+[PAGE-object].CSS_docs {
+  10 = EXTERNAL
+  10.title = BLBLBL
+  10.title.dk = BLABLABLA
+  10.docs.10 = fileadmin/.../blablabla.html
+  10.docs.20 = fileadmin/.../blablabla.css
+
+  20 = EXTERNAL
+  20.docs.10 = fileadmin/.../blablabla.html
+  20.docs.20 = fileadmin/.../blablabla2.css        [fileresources: fileadmin/ og uploads/ er editable (som reglerne nu er for template editoren)]
+  20.docs.20.objString = [Her skrives så den object-string som første del af CSS_editor object skal matche for at skrive her... (kan måske også udledes som kommentar fra filen?)], kommasep?
+  30 = EXTERNAL
+  30.docs.20 = fileadmin/.../blablabla2.css
+  30.CSS_editor < ....[alternativt CSS_editor object, ellers tages fra PAGE-object.CSS_editor / CSS_editor i root]
+}
+
+
+
+Auto-edit (automatisk tilføjet "stylecollektion" i tillæg til de specifikt definerede):
+
+1) .stylesheet property (+ page.CSS_editor)
+2) .includeCSS property...
+   .includeCSS.objString = ....
+3) inline styles (+ page.CSS_editor cfg)
+
+

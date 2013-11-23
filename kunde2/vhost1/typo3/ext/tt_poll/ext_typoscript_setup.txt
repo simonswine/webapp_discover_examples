@@ -1,0 +1,127 @@
+## Includes the pollLib:
+includeLibs.ts_poll = EXT:tt_poll/pi/class.tx_ttpoll.php
+
+## Sets up the fields, that may be submitted in order to create items. Mandatory!
+FEData.tt_poll {
+  processScript = EXT:tt_poll/pi/poll_submit.inc
+  allowEdit {
+    // following item is used to pass the vote to fe_tce.php, It's NOT a fields
+    vote = 1
+  }
+}
+
+
+plugin.tt_poll >
+plugin.tt_poll = USER
+plugin.tt_poll {
+  userFunc = tx_ttpoll->main_poll
+
+  code = VOTEFORM
+
+  pollOutputWidth = {$plugin.tt_poll.pollOutputWidth}
+
+  date_stdWrap.strftime= %e-%m-%y
+
+  voteform < styles.content.mailform
+  voteform.layout = <tr><td>###FIELD###</td></tr>
+  voteform.stdWrap.wrap = <table border=0 cellspacing=0 cellpadding=2 bgcolor=#000000><tr><td><table width=100% border=0 cellspacing=0 cellpadding=3 bgcolor=#ffffff> | </table></tr></td></table>
+  voteform.stdWrap.innerWrap.cObject = COA
+  voteform.stdWrap.innerWrap.cObject {
+    10 = TEXT
+    10.value = Survey
+    10.wrap = <tr><td align=center bgcolor=#CCCCCC>|</td></tr>
+    10.textStyle < styles.content.textStyle
+    10.textStyle.altWrap = <span class=mailform>|</span>
+
+    20 = TEXT
+    20.value = <b>###QUESTION###</b>
+    20.wrap = <tr><td>|</td></tr>
+    20.textStyle < styles.content.textStyle
+    20.textStyle.altWrap = <span class=mailform>|</span>
+  }
+  voteform.data >
+    // put only the submit button here!!!
+  voteform.dataArray {
+    10.type = formtype_db = submit
+    10.value = Vote
+  }
+
+  voteform.radioWrap.textStyle < styles.content.textStyle
+  voteform.radioWrap.textStyle.altWrap = <span class=mailform>|</span>
+  voteform.no_cache=1
+  voteform.noValueInsert=1
+  voteform.wrap =
+
+  resultObj = COA
+  resultObj.wrap = <table border=0 cellspacing=0 cellpadding=2 bgcolor=#000000><tr><td><table cellspacing=0 cellpadding=3 border=0 bgcolor=#ffffff>|</table></tr></td></table>
+  resultObj {
+    10 = TEXT
+    10.value = Survey Result
+    10.wrap = <tr><td colspan=2 align=center bgcolor=#CCCCCC>|</td></tr>
+    10.textStyle < styles.content.textStyle
+    10.textStyle.altWrap = <span class=mailform>|</span>
+
+    20 = TEXT
+    20.value = <b>###QUESTION###</b>
+    20.wrap = <tr><td colspan=2 align=center><br>|<br><br></td></tr>
+    20.textStyle < styles.content.textStyle
+    20.textStyle.altWrap = <span class=mailform>|</span>
+
+    30 = TEXT
+    30.value = ###RESULTITEMS###
+
+    40 = TEXT
+    40.value = ###TOTALVOTES### votes total
+    40.wrap = <tr><td colspan=2 align=center><br>|<br></td></tr>
+    40.textStyle < styles.content.textStyle
+    40.textStyle.altWrap = <span class=mailform>|</span>
+
+    50 = HTML
+    50.value = ###PROGRESSMSG######VOTEMSG###
+  }
+
+  resultItemObj = COA
+  resultItemObj.wrap =  <tr>|</tr>
+  resultItemObj {
+
+    10 = TEXT
+    10.value = ###ANSWER###
+    10.wrap = <td nowrap>&nbsp;&nbsp;|</td>
+    10.textStyle < styles.content.textStyle
+    10.textStyle.altWrap = <span class=mailform>|</span>
+
+    20 = HTML
+    20.value = <td nowrap><img src="{$plugin.tt_poll.beginBarImgFile}" height=14 width=7><img src="{$plugin.tt_poll.mainBarImgFile}" height=14 width=###POLLWIDTH### alt="###PERCENT### %"><img src="{$plugin.tt_poll.endBarImgFile}" height=14 width=7>
+
+    30 = TEXT
+    30.value = &nbsp;###PERCENT### % (###ITEMVOTES### votes)
+    30.wrap = |&nbsp;&nbsp;</td>
+    30.textStyle < styles.content.textStyle
+    30.textStyle.altWrap = <span class=mailform>|</span>
+  }
+
+  inProgressObj = TEXT
+  inProgressObj {
+    wrap = <tr><td colspan=2 align=center><br>|<br></td></tr>
+    value = The Survey will end at ###ENDTIME###.
+    textStyle < styles.content.textStyle
+    textStyle.altWrap = <span class=mailform>|</span>
+  }
+
+  finishedObj = TEXT
+  finishedObj {
+    wrap = <tr><td colspan=2 align=center><br>|<br></td></tr>
+    value = The Survey was finished at ###ENDTIME###.
+    textStyle < styles.content.textStyle
+    textStyle.altWrap = <span class=mailform>|</span>
+  }
+
+  submittedVoteObj = TEXT
+  submittedVoteObj {
+    wrap = <tr><td colspan=2 align=center><br>|<br></td></tr>
+    value = Your voting was: <b>"###SUBMITTEDVOTE###"</b>.
+    textStyle < styles.content.textStyle
+    textStyle.altWrap = <span class=mailform>|</span>
+  }
+}
+

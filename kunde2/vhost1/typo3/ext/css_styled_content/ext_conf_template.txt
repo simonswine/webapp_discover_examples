@@ -1,0 +1,8 @@
+  # cat=basic/enable; type=boolean; label=Set PageTSconfig by default: If you are going to use this extension by default in this database then set this flag. In that case you don't need to set specific PageTSconfig for each page, which you have to do otherwise!
+setPageTSconfig = 1
+
+
+
+
+
+# TYPO3 CVS ID: $Id: ext_conf_template.txt,v 1.2 2003/12/29 11:56:45 typo3 Exp $

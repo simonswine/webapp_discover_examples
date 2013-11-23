@@ -1,0 +1,185 @@
+## Includes the boardLib:
+includeLibs.ts_board = EXT:tt_board/pi/class.tx_ttboard.php
+
+## Sets up the fields, that may be submitted in order to create items. Mandatory!
+FEData.tt_board >
+FEData.tt_board {
+  processScript = EXT:tt_board/pi/board_submit.inc
+  processScript {
+
+      # Enable notify
+    notify = 1
+      # "From" email header
+    notify_from = TYPO3 forum <no_reply>
+      # Notification message template, first line is subject.
+    newReply.msg = EXT:tt_board/pi/board_notify.txt
+    newReply.didWhat = has just replied to a thread at
+    newReply.subjectPrefix = Reply to post at
+    newThread.msg = EXT:tt_board/pi/board_notify.txt
+    newThread.didWhat = has just created a new thread at
+    newThread.subjectPrefix = New thread at
+
+    debug=0
+  }
+  default {
+    hidden = 0
+    parent = 0
+  }
+  allowNew {
+    subject = 1
+    message = 1
+    author=1
+    email=1
+    parent=1
+    notify_me=1
+  }
+  autoInsertPID = 1
+  doublePostCheck = doublePostCheck
+}
+
+
+
+
+
+temp.tt_board.shared = USER
+temp.tt_board.shared {
+  userFunc = tx_ttboard->main_board
+
+  pid_list.field = pages
+  code.field = select_key
+
+  date_stdWrap.strftime= %e-%m-%y
+  time_stdWrap.strftime= %H:%M:%S
+  age_stdWrap.age = 1
+  allowCaching = 1
+  
+  list_categories {
+    cache_timeout = 120
+  }
+  list_forums {
+    author_stdWrap.wrap = by |
+    cache_timeout = 300
+    post_content_stdWrap.crop = 130 | ...
+    numberOfRecentPosts = {$plugin.tt_board.numberOfRecentPosts}
+  }
+  list_threads {
+    post_content_stdWrap.crop = 130 | ...
+    thread_limit = 20
+  }
+
+  postform < styles.content.mailform
+  postform.data >
+  postform.dataArray {
+    10.label = Subject:
+    10.type = *data[tt_board][NEW][subject]=input,60
+    20.label = Message:
+    20.type =  *data[tt_board][NEW][message]=textarea,60
+    30.label = Name:
+    30.type = *data[tt_board][NEW][author]=input,40
+    40.label = Email:
+    40.type = *data[tt_board][NEW][email]=input,40
+    50.label = Notify me<BR>by reply: 
+    50.type = data[tt_board][NEW][notify_me]=check
+    60.type = formtype_db=submit
+    60.value = Post Reply
+  }
+  postform.no_cache=1
+
+  postform_newThread < .postform
+  postform_newThread.dataArray.60.value = Post New Thread
+
+  moderatorEmail_newThread = {$plugin.tt_board.moderatorEmail}
+  moderatorEmail = {$plugin.tt_board.moderatorEmail}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+## This enables the tt_content.list item to display the forum, list style:
+plugin.tt_board_list < temp.tt_board.shared
+plugin.tt_board_list {
+  templateFile = {$plugin.tt_board_list.file.templateFile}
+
+  # Global wraps
+  wrap1.wrap = {$plugin.tt_board_list.wrap1}
+  wrap2.wrap = {$plugin.tt_board_list.wrap2}
+  wrap3.wrap = {$plugin.tt_board_list.wrap3}
+  color1.wrap = {$plugin.tt_board_list.color1}
+  color2.wrap = {$plugin.tt_board_list.color2}
+  color3.wrap = {$plugin.tt_board_list.color3}
+  color4.wrap = {$plugin.tt_board_list.color4}
+}
+
+
+## This enables the record item to display guestbook items
+tt_board >
+tt_board = < plugin.tt_board_list
+tt_board.displayCurrentRecord = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## This enables the tt_content.list item to display the forum, tree style:
+plugin.tt_board_tree < temp.tt_board.shared
+plugin.tt_board_tree {
+  templateFile = {$plugin.tt_board_tree.file.templateFile}
+
+  # Global wraps
+  wrap1.wrap = {$plugin.tt_board_tree.wrap1}
+  wrap2.wrap = {$plugin.tt_board_tree.wrap2}
+  wrap3.wrap = {$plugin.tt_board_tree.wrap3}
+  color1.wrap = {$plugin.tt_board_tree.color1}
+  color2.wrap = {$plugin.tt_board_tree.color2}
+  color3.wrap = {$plugin.tt_board_tree.color3}
+  color4.wrap = {$plugin.tt_board_tree.color4}
+
+    # Allows for elements to be viewed one at a time and not parent+childs
+  view_thread.single = 1
+    # Allows for the forum to draw as a tree
+  tree=1
+
+  list_forums.author_stdWrap.wrap = by |
+  list_threads.post_content_stdWrap.crop = 200 | ...
+  list_forums.post_content_stdWrap.crop = 200 | ...
+
+  iconCode=1
+  iconCode.joinBottom = <img src="media/scripts/joinbottom.gif" width=18 height=16 align="top">
+  iconCode.join = <img src="media/scripts/join.gif" width=18 height=16 align="top">
+  iconCode.line = <img src="media/scripts/line.gif" width=18 height=16 align="top">
+  iconCode.blank = <img src="media/scripts/blank.gif" width=18 height=16 align="top">
+  iconCode.thread = <img src="media/scripts/thread.gif" width=18 height=16 align="top">
+  iconCode.end = <img src="media/scripts/end.gif" width=18 height=16 align="top">
+
+  list_threads.post_title_stdWrap.wrap = <font face="verdana,arial" size=1 color=black> | </font>
+  list_threads.post_title_stdWrap.crop = 20 | ...
+  list_threads.post_author_stdWrap.wrap = <font face="verdana,arial" size=1 color=black> | </font>
+  list_threads.post_author_stdWrap.crop = 20|...
+  list_threads.thread_limit = 30
+
+  thread_tree < .list_threads
+}
+
+## This enables the record item to display guestbook items
+tt_board >
+tt_board = < plugin.tt_board_tree
+tt_board.displayCurrentRecord = 1
+

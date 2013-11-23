@@ -1,0 +1,18 @@
+plugin.tt_guest >
+plugin.tt_guest {
+    # cat=plugin.guestbook/file; type=file[html,htm,tmpl,txt]; label= Template File: This is a simple textfile where the guestbook is defined with HTML-code. To see an example with explanations, take a look at EXT:tt_guest/pi/guest_template1.tmpl which provides a good example
+  file.templateFile = EXT:tt_guest/pi/guest_template1.tmpl
+  notifyEmail = 
+
+    # cat=plugin.guestbook/typo; type=wrap; label= Wrap 1: This wrap is used in the template-file.
+  wrap1 = <font face="verdana" size=2 color=black> | </font>
+    # cat=plugin.guestbook/typo; type=wrap; label= Wrap 2: This wrap is used in the template-file.
+  wrap2 = <font face="verdana" size=1 color=black> | </font>
+
+    # cat=plugin.guestbook/color; type=color; label= Color 1: This bgcolor is used in the template-file.
+  color1 = #cccccc
+    # cat=plugin.guestbook/color; type=color; label= Color 2: This bgcolor is used in the template-file.
+  color2 = #999999
+    # cat=plugin.guestbook/color; type=color; label= Color 3: This bgcolor is used in the template-file.
+  color3 = #333333
+}

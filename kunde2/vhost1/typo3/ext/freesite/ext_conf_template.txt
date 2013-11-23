@@ -1,0 +1,25 @@
+  # cat=basic/; type=int+; label=The PID with Template Record Archive: If 0 (zero), no template is created for the new site. If archive has no templates in it, the site gets an empty template. The archive folder should be a "sysFolder" -> In the template archive you should put template-records that you want the new websites to be "based on". Templates in subpages in the archive are also selectable. 
+pid_templateArchive = 
+  # cat=basic/; type=int+; label=The PID of the dummy page archive: If 0 (zero), no dummy pages are created for the new site. REMEMBER that the user MUST have read access to the dummy pages. Any pages, the user cannot read are (of course) not copied! The archive folder should be a "sysFolder" -> In the dummy page archive you should create pages with subpages that represent various kinds of dummy-content for new sites created. Every page in the root of the dummy page archive represents a page-structure, and only sub- and subsub-pages are copied.
+pid_dummyPagesArchive = 
+  # cat=basic/; type=int+; label=The PID under which new sites are created!: If this is NOT set and valid, users will not get a new site!! (So this affects everything). Users will just be created with their group and any optional user-/groupHomeDir
+pid_newsite = 
+  # cat=basic/; type=int+; label=Template User Group uid: Optional. The user-group to use as a model for the created usergroups! What this means is that certain fields from this groups is directly copied to the created groups! The fields are: (inc_access_lists,non_exclude_fields,pagetypes_select,tables_select,tables_modify,groupMods,db_mountpoints,db_mountpoints,file_mountpoints). See tables.php for further information.
+uid_templateGroup = 
+  # cat=basic/; type=int+; label=General User Group uid: Optional: The user-group to use as a secondary group for all created users. New users will be a member of their own group + this group (if it exists). Good trick is to include this general group as a subgroup of the template group. This way new users to the site needs only being members of the template group and not both...
+uid_generalGroup = 
+
+  # cat=basic/enable; type=boolean; label=BACKEND LOGIN required: If set, then the module will check for a backend login. If false, everyone can create a new site with the module at typo3/ext/freesite/mod/index.php. So WATCH OUT FOR THIS ONE! It should probably be enabled!
+backendOnly = 1
+
+  # cat=basic/enable; type=boolean; label=Lock users to the created domain: If set, the users and groups are locked to their domains, if domain is entered. LockToDomain is a feature that lets users login (and groups be enabled) only from that domain!
+create_lockToDomain = 1
+  # cat=basic/enable; type=boolean; label=Allow virtual dirs: If set, a virtual-directory in the root of the typo3-site is created. This REQUIRES a domain-record and therefore "createDomains" must be enabled for this feature to work. Does not work on Windows. -> A virtual directory is a directory that consists of softlinks to the majority of files/folders in the root of the typo3-site. This feature provides a way to let "http://www.typo3.com/man_uk/" go to a specific page (site) in the page-structure.
+createVirtualDirs = 0
+  # cat=basic/enable; type=boolean; label=Create Group Home directory: If set and $TYPO3_CONF_VARS["BE"]["groupHomePath"] is set and valid, a new directory for the group is created here! (that is a directory with the number "be_groups.uid" of the usergroup)
+createNewGroupDir = 0
+  # cat=basic/enable; type=boolean; label=Create User Home directory: If set and $TYPO3_CONF_VARS["BE"]["userHomePath"] is set, a new directory for the user is created here! NORMALLY just create a group-dir. Should be sufficient for most cases. (that is a directory with the number "be_users.uid" of the new user)
+createNewUserDir = 0
+
+  # cat=basic/; type=string; label=Notification email: Enter email-adress to be notified when a site is created. Default address (if blank) is the $TYPO3_CONF_VARS["BE"]["warning_email_addr"] (admin notification)
+notify_email = 

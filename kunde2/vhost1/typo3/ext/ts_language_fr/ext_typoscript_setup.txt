@@ -1,0 +1,126 @@
+## Setting the TypoScript language to french:
+#config.language = fr
+ 
+ 
+# ***********************************
+#  Login form as used in 'content (default)'
+# ***********************************
+tt_content.login.20.dataArray {
+    10.label.lang.fr = Nom d'utilisateur:
+    20.label.lang.fr = Mot de passe:
+    40.value.lang.fr = Login
+}
+ 
+[usergroup = *]
+tt_content.login.20.dataArray {
+    10.label.lang.fr = Nom d'utilisateur: <!--###USERNAME###-->
+    20 >
+    40.value.lang.fr = Logout
+}
+[global]
+ 
+ 
+ 
+ 
+# ***********************
+#  Search dialog object
+# ***********************
+ 
+tt_content.search.30.dataArray {
+    10.label.lang.fr = Chercher:
+    20.label.lang.fr = dans
+    20.valueArray {
+      10.label.lang.fr = Titre et Mots clés
+      20.label.lang.fr = Contenu de la page
+    }
+    40.value.lang.fr = Démarrer la recherche
+}
+ 
+ 
+ 
+# ***********************
+#  Search result page object
+# ***********************
+tt_content.search.20 {
+  layout.10.lang.fr = Echelle de recherche: ###RANGELOW###-###RANGEHIGH### de ###TOTAL###
+  noResultObj.10.lang.fr = La recherche ne donne aucun résultat!
+  next.lang.fr = Suivant
+  prev.lang.fr = Précédent
+}
+ 
+ 
+ 
+# ***********************
+#  Default Guestbook form
+# ***********************
+plugin.tt_guest.postform.dataArray {
+  10.label.lang.fr = Titre:
+  20.label.lang.fr = Ton commentaire:
+  30.label.lang.fr = Nom:
+  40.label.lang.fr = E-mail:
+  50.label.lang.fr = Site Web:
+  60.value.lang.fr = S'inscrire
+}
+ 
+ 
+# ***********************
+#  Default List Board form
+# ***********************
+plugin.tt_board_list.postform.dataArray {
+  10.label.lang.fr = Thème:
+  20.label.lang.fr = Message:
+  30.label.lang.fr = Nom:
+  40.label.lang.fr = E-mail:
+  50.label.lang.fr = Notifier<BR>en cas de réponse(en):
+  60.value.lang.fr = Envoyer la réponse
+}
+plugin.tt_board_list.postform_newThread.dataArray {
+  10.label.lang.fr = Thème:
+  20.label.lang.fr = Message:
+  30.label.lang.fr = Nom:
+  40.label.lang.fr = E-mail:
+  50.label.lang.fr = Notifier<BR>en cas de réponse (en):
+  60.value.lang.fr = Ouvrir la discution
+}
+
+    // "You must fill in these fields:"
+plugin.tt_board_list.postform.badMess = Vous devez remplir ces champs: 
+plugin.tt_board_list.postform_newThread.badMess = Vous devez remplir ces champs: 
+
+ 
+# ***********************
+#  Default Tree Board form
+# ***********************
+plugin.tt_board_tree.postform.dataArray {
+  10.label.lang.fr = Thème:
+  20.label.lang.fr = Message:
+  30.label.lang.fr = Nom:
+  40.label.lang.fr = E-mail:
+  50.label.lang.fr = Notifier<BR>en cas de réponse(en):
+  60.value.lang.fr = Envoyer la réponse
+}
+plugin.tt_board_tree.postform_newThread.dataArray {
+  10.label.lang.fr = Thème:
+  20.label.lang.fr = Message:
+  30.label.lang.fr = Nom:
+  40.label.lang.fr = E-mail:
+  50.label.lang.fr = Notifier<BR>en cas de réponse (en):
+  60.value.lang.fr = Ouvrir la discution
+}
+
+
+plugin.tt_board_tree.postform.badMess = Vous devez remplir ces champs: 
+plugin.tt_board_tree.postform_newThread.badMess =Vous devez remplir ces champs: 
+
+
+
+# ***********************
+#  Newsletter subscription
+# ***********************
+plugin.feadmin.dmailsubscription.evalErrors.email {
+     // "Apparently you're already registered with this email address!
+  uniqueLocal = Apparemment, vous êtes déjà enregistré avec cette adresse!
+     // This is not a correct email address!
+  email = Ce n'est pas un adresse e-mail valide!
+}
+

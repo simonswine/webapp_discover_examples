@@ -1,0 +1,23 @@
+**************
+STATUS
+**************
+This module was originally intended to be a framework for all plugins in a branch of the page tree. However it has never taken off and the original significance of it may be removed soon.
+One way to develop the module would be to make it a framework for plugins (like the Template module is for the "Function menu modules" there) which has an API so extensions with plugins could add management functions into the plugins module. I think this should be very attractive alternative to putting a similar module into "Info" or "Functions" where such a thing does not belong if it is directly related to a plugin.
+
+
+***************
+NOTES
+***************
+Here are some old notes in danish about the module:
+
+shop:
+ - shop root:
+   - herfra: product-lists, Opret produkter
+   - order-views ( ordre skal ligge i folderen)
+    - Opsæt admin-oplysninger (page-TS - ligesom Dmail)
+
+Forum
+  - viser hvilke sider i udgående træ, der har fora-records og hvilken type (LIST/CATEGORIES/FORUM)
+    - Opret nyt forum, ny kategori (
+    - Opsæt admin-oplysninger (page-TS - ligesom Dmail)
+

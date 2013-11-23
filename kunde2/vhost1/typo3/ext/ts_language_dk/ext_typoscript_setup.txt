@@ -1,0 +1,118 @@
+## Setting the TypoScript language to danish:
+#config.language = dk
+
+
+# ***********************************
+#  Login form as used in 'content (default)'
+# ***********************************
+tt_content.login.20.dataArray {
+    10.label.lang.dk = Brugernavn:
+    20.label.lang.dk = Password:
+    40.value.lang.dk = Login
+}
+
+[usergroup = *]
+tt_content.login.20.dataArray {
+    10.label.lang.dk = Brugernavn: <!--###USERNAME###--> 
+    20 >
+    40.value.lang.dk = Logout
+}
+[global]
+
+
+
+
+# ***********************
+#  Search dialog object
+# ***********************
+
+tt_content.search.30.dataArray {
+    10.label.lang.dk = Søgeord:
+    20.label.lang.dk = Søg i:
+    20.valueArray {
+      10.label.lang.dk = Overskrifter og nøgleord
+      20.label.lang.dk = Sideindhold
+    }
+    40.value.lang.dk = Start søgning!
+}
+
+
+
+# ***********************
+#  Search result page object
+# ***********************
+tt_content.search.20 {
+  layout.10.lang.dk = Søgeresultat: ###RANGELOW###-###RANGEHIGH### ud af ###TOTAL###
+  noResultObj.10.lang.dk = Beklager, din søgning var tom!
+  next.lang.dk = Næste
+  prev.lang.dk = Forrige
+}
+
+
+
+# ***********************
+#  Default Guestbook form
+# ***********************
+plugin.tt_guest.postform.dataArray {
+  10.label.lang.dk = Oversk:
+  20.label.lang.dk = Din kommentar:
+  30.label.lang.dk = Navn:
+  40.label.lang.dk = Email:
+  50.label.lang.dk = Hjemmeside:
+  60.value.lang.dk = Tilføj dig selv
+}
+
+
+# ***********************
+#  Default List Board form
+# ***********************
+plugin.tt_board_list.postform.dataArray {
+  10.label.lang.dk = Emne:
+  20.label.lang.dk = Tekst:
+  30.label.lang.dk = Navn:
+  40.label.lang.dk = Email:
+  50.label.lang.dk = Send email<BR>ved svar: 
+  60.value.lang.dk = Send svar
+}
+plugin.tt_board_list.postform_newThread.dataArray {
+  10.label.lang.dk = Emne:
+  20.label.lang.dk = Tekst:
+  30.label.lang.dk = Navn:
+  40.label.lang.dk = Email:
+  50.label.lang.dk = Send email<BR>ved svar: 
+  60.value.lang.dk = Opret ny tråd
+}
+plugin.tt_board_list.postform.badMess = Du skal udfylde disse felter:
+plugin.tt_board_list.postform_newThread.badMess = Du skal udfylde disse felter:
+
+# ***********************
+#  Default Tree Board form
+# ***********************
+plugin.tt_board_tree.postform.dataArray {
+  10.label.lang.dk = Emne:
+  20.label.lang.dk = Tekst:
+  30.label.lang.dk = Navn:
+  40.label.lang.dk = Email:
+  50.label.lang.dk = Send email<BR>ved svar: 
+  60.value.lang.dk = Send svar
+}
+plugin.tt_board_tree.postform_newThread.dataArray {
+  10.label.lang.dk = Emne:
+  20.label.lang.dk = Tekst:
+  30.label.lang.dk = Navn:
+  40.label.lang.dk = Email:
+  50.label.lang.dk = Send email<BR>ved svar: 
+  60.value.lang.dk = Opret ny tråd
+}
+plugin.tt_board_tree.postform.badMess = Du skal udfylde disse felter:
+plugin.tt_board_tree.postform_newThread.badMess = Du skal udfylde disse felter:
+
+
+
+# ***********************
+#  Newsletter subscription
+# ***********************
+plugin.feadmin.dmailsubscription.evalErrors.email {
+  uniqueLocal = Tilsyneladende er du allerede registreret med denne email adresse!
+  email = Dette er ikke en korrekt email adresse!
+}

@@ -1,0 +1,2 @@
+- Ability to delete messages in Sent folder (code example in Message-ID: <92B63AFB4F9AD6118CAD00D0B7B65CE9F06E0B@CLGSTSBS>)
+- cron-Notifications/overviews etc.

@@ -1,0 +1,77 @@
+plugin.feadmin.fe_users >
+plugin.feadmin.fe_users = USER_INT
+plugin.feadmin.fe_users {
+  userFunc = user_feAdmin->init
+  includeLibs = media/scripts/fe_adminLib.inc
+  templateFile ={$plugin.feadmin.fe_users.file.templateFile}
+
+  # Global wraps
+  wrap1.wrap = {$plugin.feadmin.fe_users.wrap1}
+  wrap2.wrap = {$plugin.feadmin.fe_users.wrap2}
+  color1.wrap = {$plugin.feadmin.fe_users.color1}
+  color2.wrap = {$plugin.feadmin.fe_users.color2}
+  color3.wrap = {$plugin.feadmin.fe_users.color3}
+
+  // Tables + Commands
+  table=fe_users
+  defaultCmd=create
+  debug=0
+
+  setfixed=0
+  delete=1
+
+    // Info-mail setup
+  infomail = 1
+  infomail.default {
+    label = FORGOTPASSWORD
+  }
+
+    // Creating
+  create = 1
+  create.preview = 1
+  create.fields = username,password,name,email,usergroup,address,telephone,fax,title,company,zip,city,country,www
+  create.required = username,password,name,email
+  create.overrideValues {
+    usergroup = {$plugin.feadmin.fe_users.usergroupOverride}
+  }
+  create.evalValues {
+    password = twice, atLeast[5]
+    username = uniqueLocal, atLeast[4]
+    email = email
+  }
+
+    // Editing:
+  edit < .create
+  edit.overrideValues {
+    username =
+  }
+  edit.evalValues {
+    username = unsetEmpty
+    usergroup = unsetEmpty
+  }
+
+
+    // Field parsing and evaluation error messages:
+  parseValues {
+    username = lower,nospace,trim
+    email < .username
+    password = trim
+  }
+  evalErrors {
+    password.twice = You must enter the password twice.
+    password.atLeast = There must be at least %s characters in your password!
+    email.email = The email address is not validly formed. Must contain @ and a domain
+    username.uniqueLocal = The username exists already. Please select another one.
+    username.atLeast = There must be at least %s characters in your username!
+  }
+  pid = {$plugin.feadmin.fe_users.pid}
+  fe_userOwnSelf = 1
+  fe_userEditSelf = 1
+
+  cObjects.LOGIN = < tt_content.login.20
+
+  email.from = {$plugin.feadmin.fe_users.email}
+  email.fromName = {$plugin.feadmin.fe_users.emailName}
+  email.admin = {$plugin.feadmin.fe_users.email}
+  email.field = email
+}

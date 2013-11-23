@@ -1,0 +1,124 @@
+## Setting the TypoScript language to dutch:
+#config.language = nl
+
+
+# ***********************************
+#  Login form as used in 'content (default)'
+# ***********************************
+tt_content.login.20.dataArray {
+    10.label.lang.nl = Gebruikersnaam:
+    20.label.lang.nl = Wachtwoord:
+    40.value.lang.nl = Log In
+}
+
+[usergroup = *]
+tt_content.login.20.dataArray {
+    10.label.lang.nl = Gebruikersnaam: <!--###USERNAME###-->
+    20 >
+    40.value.lang.nl = Log Uit
+}
+[global]
+
+
+
+
+# ***********************
+#  Search dialog object
+# ***********************
+
+tt_content.search.30.dataArray {
+    10.label.lang.nl = Zoeken:
+    20.label.lang.nl = in
+    20.valueArray {
+      10.label.lang.nl = Titels en kernwoorden
+      20.label.lang.nl = Site-inhoud
+    }
+    40.value.lang.nl = Zoeken
+}
+
+
+
+# ***********************
+#  Search result page object
+# ***********************
+tt_content.search.20 {
+  layout.10.lang.nl = Zoekresultaat: ###RANGELOW###-###RANGEHIGH### van ###TOTAL###
+  noResultObj.10.lang.nl = Helaas, Er zijn geen pagina's gevonden die voldoen aan de opgegeven criteria. Pas je zoekopdracht aan en probeer het nog eens!
+  next.lang.nl = Volgende
+  prev.lang.nl = Volgende
+}
+
+
+
+# ***********************
+#  Default Guestbook form
+# ***********************
+plugin.tt_guest.postform.dataArray {
+  10.label.lang.nl = Onderwerp:
+  20.label.lang.nl = Jouw commentaar:
+  30.label.lang.nl = Naam:
+  40.label.lang.nl = Email:
+  50.label.lang.nl = Homepage:
+  60.value.lang.nl = Verzenden
+}
+
+
+# ***********************
+#  Default List Board form
+# ***********************
+plugin.tt_board_list.postform.dataArray {
+  10.label.lang.nl = Thema:
+  20.label.lang.nl = Mededeling:
+  30.label.lang.nl = Naam:
+  40.label.lang.nl = Email:
+  50.label.lang.nl = Kennisgeving<br>bij antwoord:
+  60.value.lang.nl = Antwoord verzenden
+}
+plugin.tt_board_list.postform_newThread.dataArray {
+  10.label.lang.nl = Thema:
+  20.label.lang.nl = Mededeling:
+  30.label.lang.nl = Naam:
+  40.label.lang.nl = Email:
+  50.label.lang.nl = Kennisgeving<br>bij antwoord:
+  60.value.lang.nl = Discussie openen
+}
+
+    // "You must fill in these fields:"
+plugin.tt_board_list.postform.badMess = Je moet de volgende velden invullen:
+plugin.tt_board_list.postform_newThread.badMess = Je moet de volgende velden invullen:
+
+# ***********************
+#  Default Tree Board form
+# ***********************
+plugin.tt_board_tree.postform.dataArray {
+  10.label.lang.nl = Thema:
+  20.label.lang.nl = Mededeling:
+  30.label.lang.nl = Naam:
+  40.label.lang.nl = Email:
+  50.label.lang.nl = Kennisgeving<br>bij antwoord:
+  60.value.lang.nl = Antwoord verzenden
+}
+plugin.tt_board_tree.postform_newThread.dataArray {
+  10.label.lang.nl = Thema:
+  20.label.lang.nl = Mededeling:
+  30.label.lang.nl = Naam:
+  40.label.lang.nl = Email:
+  50.label.lang.nl = Kennisgeving<br>bij antwoord:
+  60.value.lang.nl = Discussie openen
+}
+
+
+plugin.tt_board_tree.postform.badMess = Je moet de volgende velden invullen:
+plugin.tt_board_tree.postform_newThread.badMess = Je moet de volgende velden invullen:
+
+
+
+# ***********************
+#  Newsletter subscription
+# ***********************
+plugin.feadmin.dmailsubscription.evalErrors.email {
+     // "Apparently you're already registered with this email address!
+  uniqueLocal = Kennelijk ben je al geregistreerd met dit emailadres!
+     // This is not a correct email address!
+  email = Dit is geen geldig emailadres!
+}

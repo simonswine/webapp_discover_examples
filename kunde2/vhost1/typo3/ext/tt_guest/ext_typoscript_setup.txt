@@ -1,0 +1,79 @@
+## Includes the guestLib:
+includeLibs.ts_guest = EXT:tt_guest/pi/class.tx_ttguest.php
+
+
+## Sets up the fields, that may be submitted in order to create items. Mandatory!
+FEData.tt_guest >
+FEData.tt_guest {
+  processScript = EXT:tt_guest/pi/guest_submit.inc
+  processScript.notifyEmail = {$plugin.tt_guest.notifyEmail}
+  default {
+    hidden = 0
+  }
+  allowNew {
+    title = 1
+    note = 1
+    cr_name=1
+    cr_email=1
+    www=1
+  }
+  autoInsertPID = 1
+  doublePostCheck = doublePostCheck
+}
+
+
+
+## This enables the tt_content.list item to display the guestbook:
+plugin.tt_guest >
+plugin.tt_guest = USER
+plugin.tt_guest {
+  userFunc = tx_ttguest->main_guestbook
+
+  templateFile = {$plugin.tt_guest.file.templateFile}
+  pid_list.field = pages
+  code.field = select_key
+  
+  limit = 2
+  nextLabel = next
+  previousLabel = previous
+  
+  # Global wraps
+  wrap1.wrap = {$plugin.tt_guest.wrap1}
+  wrap2.wrap = {$plugin.tt_guest.wrap2}
+  color1.wrap = {$plugin.tt_guest.color1}
+  color2.wrap = {$plugin.tt_guest.color2}
+  color3.wrap = {$plugin.tt_guest.color3}
+
+  # Change/add to format the content:
+  age_stdWrap.age = 1
+  date_stdWrap.strftime= %e-%m-%y
+  time_stdWrap.strftime= %H:%M:%S
+  author_stdWrap.case = upper
+  www_stdWrap.typolink.parameter.field = www
+  email_stdWrap.typolink.parameter.field = cr_email
+  requireRecords = 1
+
+  	# Change/add to format the submit-form
+  postform < styles.content.mailform
+  postform.data >
+  postform.dataArray {
+    10.label = Header:
+    10.type = *data[tt_guest][NEW][title]=input 
+    20.label = Your comment:
+    20.type = *data[tt_guest][NEW][note]=textarea
+    30.label = Name:
+    30.type = *data[tt_guest][NEW][cr_name]=input 
+    40.label = Email:
+    40.type = *data[tt_guest][NEW][cr_email]=input
+    50.label = Homepage:
+    50.type = *data[tt_guest][NEW][www]=input 
+    60.type = formtype_db=submit
+    60.value = Add yourself
+  }
+  postform.no_cache=1
+}
+
+## This enables the tt_content.record item to display guestbook items:
+tt_guest >
+tt_guest = < plugin.tt_guest
+tt_guest.displayCurrentRecord = 1

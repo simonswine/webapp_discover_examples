@@ -1,0 +1,33 @@
+plugin.tt_rating >
+plugin.tt_rating {
+
+    # cat=plugin.rating/typo; type=; label= Vote form data.
+  formdata = | *data[tt_rating][EDIT][rating]=select |0 - No rating=0, 5 - Excellent=5, 4 - Good=4, 3 - Fair=3, 2 - Needs improvement=2, 1 - Unsatisfactory=1 ||  | formtype_db = submit | Rate this
+
+# cat=plugin.rating/typo; type=; label= Text to show if not rated yet.
+  notRatedMsg = This object is not rated yet.
+    # cat=plugin.rating/typo; type=; label= Text to show if just rated.
+  submittedRatingMsg = Your submitted rating was ###SUBMITTED_RATING###.
+    # cat=plugin.rating/typo; type=; label= Text to show if user try to rate twice.
+  doubleRatingMsg = You have already rated this item.
+    # cat=plugin.rating/typo; type=; label= Text to show below your rating bar.
+  textOutput = &nbsp;&nbsp;<b>###RATING###</b> (###VOTES### votes)
+
+    # cat=plugin.rating/typo; type=int; label= The highest possible rating. (examples: 5 [best] - 1 [worst], 1 [best] - 6 [worst])
+  highestRating = 5
+    # cat=plugin.rating/typo; type=int; label= The lowest possible rating.
+  lowestRating = 1
+    # cat=plugin.rating/typo; type=int; label= For statistics logging. This should match the steps in the form.
+  ratingStatSteps = 5
+    # cat=plugin.rating/typo; type=int; label= The length of a bar or similiar.
+  ratingOutputWidth = 110
+
+    # cat=plugin.rating/typo; type=; label= Image used to render the 'good' bar.
+  goodImgFile = EXT:tt_rating/pi/star.gif
+    # cat=plugin.rating/typo; type=; label= Image used to render the 'bad' bar.
+  badImgFile = EXT:tt_rating/pi/star_grey.gif
+    # cat=plugin.rating/typo; type=; label= Image used to mask both images against the background color.
+  maskImgFile = EXT:tt_rating/pi/star_mask.gif
+    # cat=plugin.rating/typo; type=int[1-20]; label= Should the image be tiled (example: 5 stars). If not set it to 1.
+  tileImg = 5
+}

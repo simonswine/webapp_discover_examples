@@ -1,0 +1,29 @@
+***********
+TODO
+***********
+- Ability to insert the "_rtekeep" flag in the link-box
+- Further "clean up" the JavaScript code of the RTE
+- Import HTML in the RTE. Done as a "wizard" for that field? (reads HTML through a parser for the RTE)
+- Magic Image should be a choice when you *select* image, not a menu-choice as it is now.
+- Remove the image-files found in the extension originally though as placeholders for "template editing"
+- Attach a stylesheet file.
+- Maybe detect classes automatically from stylesheet file?
+- Ampersand problem in saved content - and generally the conversion to entities. How to handle?
+
+Table editor:
+The RTE's tableeditor needs to be improved a lot with options for inserting, deleting, merging cells. Somebody with knowledge of DHTML and insight into the RTE's JavaScript library is required for this task. I relies mostly on JavaScript. To investigate/play with it see in your typo3 source in rte.js
+- tablecolumns and rows added/deleted/joined/splitted by either popup or buttons in toolbar.
+- Adding paragraph "signs" after paragraphs"
+
+Documentation:
+- [From Ben:] There is a serious need for some examples. 
+- [From Ben:] Would be nice if we can have some preconfiguration extensions for RTE processing.
+
+Also see:
+- [Kasper] "Workflow" folder in Mailbox 
+
+**********
+Bugs:
+**********
+- Does not work in MSIE4(?)
+

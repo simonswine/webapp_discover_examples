@@ -1,0 +1,13 @@
+plugin.tt_poll >
+plugin.tt_poll {
+
+    # cat=plugin.poll/typo; type=int; label= The length of a bar or similiar that indicates 100%.
+  pollOutputWidth = 250
+    # cat=plugin.poll/typo; type=; label= Image used to render the bar begin.
+  beginBarImgFile = EXT:tt_poll/pi/pollbar-begin.gif
+    # cat=plugin.poll/typo; type=; label= Image used to render the bar.
+  mainBarImgFile = EXT:tt_poll/pi/pollbar-main.gif
+    # cat=plugin.poll/typo; type=; label= Image used to render the bar end.
+  endBarImgFile = EXT:tt_poll/pi/pollbar-end.gif
+
+}
